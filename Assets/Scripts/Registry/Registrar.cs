@@ -36,6 +36,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Limestone>("rockLimestone");
 		Registry.RegisterItem<TNT>("tnt");
 		Registry.RegisterItem<OreRedstone>("oreRedstone");
+		Registry.RegisterItem<LimestoneSaltpeter>("limestoneSaltpeter");
 	}
 
 	void RegisterItems()
@@ -55,6 +56,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Apple>("apple");
 		Registry.RegisterItem<Petroleum>("petroleum");
 		Registry.RegisterItem<Redstone>("redstone");
+		Registry.RegisterItem<Saltpeter>("saltpeter");
 	}
 
 	void RegisterCraftingRecipes()

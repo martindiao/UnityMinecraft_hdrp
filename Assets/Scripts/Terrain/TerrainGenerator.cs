@@ -356,10 +356,13 @@ public class TerrainGenerator : MonoBehaviour
 
 		string blockName = "stone";
 		
-		if (probability <= 8)
+		if (probability <= 8 && y > 25 && y < 58)
 			blockName = "rockLimestone";
 		
-		if (probability <= 7)
+		if (probability <= 7 && y > 25 && y < 58)
+			blockName = "limestoneSaltpeter";
+		
+		if (probability <= 6)
 			blockName = "oreCoal";
 
 		if (probability <= 5 && y > 25 && y < 58)
