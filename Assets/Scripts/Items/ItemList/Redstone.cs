@@ -12,7 +12,7 @@ public class Redstone: Item
 		this.placeableOnlyOnTop 	= false;
 		this.placeableOnOtherItems 	= false;
 		this.hasGenericMesh			= true;
-		this.burnable				= true;
+		this.burnable				= false;
 		this.burnTime			 	= 100;
 		this.LoadPrefab();
     }
