@@ -36,6 +36,7 @@ ExportedObj/
 Packages/
 Assets/TextMesh Pro/
 UniBuild/
+Assets/Plugins/MoonSharp/
 *.csproj
 *.unityproj
 *.sln

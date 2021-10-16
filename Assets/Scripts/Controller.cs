@@ -13,7 +13,7 @@ public class Controller : MonoBehaviour
 
 		GameObject.Find("Player").transform.Translate(new Vector3(512, 70, 512));
 
-		InventoryContainers.inventory.items[26] = new InventoryItem("rainbowGenerator");
+		//InventoryContainers.inventory.items[26] = new InventoryItem("rainbowGenerator");
 
 		GUI.hotbar.UpdateGUI();
     }

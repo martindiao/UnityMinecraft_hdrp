@@ -371,8 +371,10 @@ public class TerrainGenerator : MonoBehaviour
 		if (probability <= 1 && y <= 14)
 			if (probabilityDiamond > 50)
 				blockName = "oreDiamond";
-			else
+			else if (probabilityDiamond > 40)
 				blockName = "oreEmerald";
+			else
+				blockName = "oreRedstone";
 
 		return blockName;
 	}
