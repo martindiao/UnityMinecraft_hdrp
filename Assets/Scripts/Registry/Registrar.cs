@@ -57,6 +57,8 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Petroleum>("petroleum");
 		Registry.RegisterItem<Redstone>("redstone");
 		Registry.RegisterItem<Saltpeter>("saltpeter");
+		Registry.RegisterItem<Charcoal>("charcoal");
+		Registry.RegisterItem<Sulfur>("sulfur");
 	}
 
 	void RegisterCraftingRecipes()
