@@ -36,7 +36,9 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Limestone>("rockLimestone");
 		Registry.RegisterItem<TNT>("tnt");
 		Registry.RegisterItem<OreRedstone>("oreRedstone");
-		Registry.RegisterItem<LimestoneSaltpeter>("limestoneSaltpeter");
+		Registry.RegisterItem<LimestoneSaltpeter>("saltpeterOre");
+		Registry.RegisterItem<SulfurBlock>("sulfurBlock");
+		Registry.RegisterItem<OreSulfur>("oreSulfur");
 	}
 
 	void RegisterItems()
@@ -59,10 +61,20 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Saltpeter>("saltpeter");
 		Registry.RegisterItem<Charcoal>("charcoal");
 		Registry.RegisterItem<Sulfur>("sulfur");
+		Registry.RegisterItem<Gunpowder>("gunpowder");
 	}
 
 	void RegisterCraftingRecipes()
 	{
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{null, null, null},
+				{"charcoal", "saltpeter", "sulfur"},
+				{null, null, null}
+			}, 
+			new CraftingResult("gunpwoder", 2)
+		));
+
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
 				{"coal", null, null},
@@ -142,6 +154,15 @@ public class Registrar : MonoBehaviour
 				{"diamond", "diamond", "diamond"}
 			}, 
 			new CraftingResult("diamondBlock", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"sulfur", "sulfur", "sulfur"},
+				{"sulfur", "sulfur", "sulfur"},
+				{"sulfur", "sulfur", "sulfur"}
+			}, 
+			new CraftingResult("sulfurBlock", 1)
 		));
 
 		CraftingRecipeRegistry.RegisterRecipe(

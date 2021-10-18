@@ -360,7 +360,7 @@ public class TerrainGenerator : MonoBehaviour
 			blockName = "rockLimestone";
 		
 		if (probability <= 7 && y > 25 && y < 58)
-			blockName = "limestoneSaltpeter";
+			blockName = "saltpeterOre";
 		
 		if (probability <= 6)
 			blockName = "oreCoal";
@@ -371,13 +371,17 @@ public class TerrainGenerator : MonoBehaviour
 		if (probability <= 1 && y <= 25)
 			blockName = "oreGold";
 
+		if (probability <= 2 && y <= 20)
+			blockName = "oreRedstone";
+
+		if (probability <= 4 && y <= 14)
+			blockName = "oreSulfur";
+
 		if (probability <= 1 && y <= 14)
-			if (probabilityDiamond > 50)
+			if (probabilityDiamond > 47)
 				blockName = "oreDiamond";
-			else if (probabilityDiamond > 40)
-				blockName = "oreEmerald";
 			else
-				blockName = "oreRedstone";
+				blockName = "oreEmerald";
 
 		return blockName;
 	}
