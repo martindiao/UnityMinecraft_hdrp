@@ -1,4 +1,8 @@
-﻿public class Saltpeter: Item
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Saltpeter: Item
 {
     public Saltpeter()
     {

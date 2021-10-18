@@ -1,4 +1,8 @@
-﻿public class Gunpowder: Item
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Gunpowder: Item
 {
     public Gunpowder()
     {

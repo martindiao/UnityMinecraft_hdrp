@@ -69,10 +69,10 @@ public class Registrar : MonoBehaviour
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
 				{null, null, null},
-				{"charcoal", "saltpeter", "sulfur"},
+				{"log", "log", "log"},
 				{null, null, null}
 			}, 
-			new CraftingResult("gunpwoder", 2)
+			new CraftingResult("gunpowder", 2)
 		));
 
 		CraftingRecipeRegistry.RegisterRecipe(
