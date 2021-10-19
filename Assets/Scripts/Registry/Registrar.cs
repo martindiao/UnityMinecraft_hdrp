@@ -66,14 +66,6 @@ public class Registrar : MonoBehaviour
 
 	void RegisterCraftingRecipes()
 	{
-		CraftingRecipeRegistry.RegisterRecipe(
-			new CraftingRecipe(new string[3,3] {
-				{null, null, null},
-				{"log", "log", "log"},
-				{null, null, null}
-			}, 
-			new CraftingResult("gunpowder", 2)
-		));
 
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
@@ -154,6 +146,15 @@ public class Registrar : MonoBehaviour
 				{"diamond", "diamond", "diamond"}
 			}, 
 			new CraftingResult("diamondBlock", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"charcoal", "saltpeter", "sulfur"},
+				{null, null, null},
+				{null, null, null}
+			}, 
+			new CraftingResult("gunpowder", 2)
 		));
 
 		CraftingRecipeRegistry.RegisterRecipe(
