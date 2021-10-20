@@ -11,7 +11,7 @@ public class StonePickaxe: Item
 		this.placeable				= false;
 		this.miningLevel			= MiningLevel.STONE;
 		this.toolType				= ToolType.PICKAXE;
-		this.breakingSpeedModifier	= 1.5f;
+		this.breakingSpeedModifier	= 2.0f;
 		this.LoadPrefab();
     }
 }

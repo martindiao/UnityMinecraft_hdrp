@@ -11,7 +11,7 @@ public class GoldPickaxe: Item
 		this.placeable				= false;
 		this.miningLevel			= MiningLevel.IRON;
 		this.toolType				= ToolType.PICKAXE;
-		this.breakingSpeedModifier	= 2.5f;
+		this.breakingSpeedModifier	= 3.5f;
 		this.LoadPrefab();
     }
 }

@@ -39,6 +39,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<LimestoneSaltpeter>("saltpeterOre");
 		Registry.RegisterItem<SulfurBlock>("sulfurBlock");
 		Registry.RegisterItem<OreSulfur>("oreSulfur");
+		Registry.RegisterItem<Water>("water");
 	}
 
 	void RegisterItems()

@@ -256,6 +256,9 @@ public class TerrainGenerator : MonoBehaviour
 
 			if (j == Mathf.FloorToInt(baselineLandHeight))
 				blockType = "grass";
+			
+			//if (j > Mathf.FloorToInt(baselineLandHeight))
+			//	blockType = "water";
 		}
 
 		if (j <= baselineStoneHeight)
