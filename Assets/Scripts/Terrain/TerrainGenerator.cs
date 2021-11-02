@@ -261,7 +261,7 @@ public class TerrainGenerator : MonoBehaviour
 		if (j <= baselineStoneHeight)
 			blockType = "stone";
 		
-		if (j >= 40 && j < 70 && blockType == "air")
+		if (j >= 40 && j < 63 && blockType == "air")
 			blockType = "water";
 
 		//if (j <= baselineStoneHeight)

@@ -110,9 +110,14 @@ public class Item: IInteractable
 	/// <summary>
 	/// Item result when smelted.
 	/// </summary>
+	private CraftingResult? _smeltedResult;
+
+	/// <summary>
+	/// Item result when smelted.
+	/// </summary>
 	public CraftingResult? smeltedResult {
-		get { return null; }
-		set {}
+		get { return this._smeltedResult; }
+		set { this._smeltedResult = value; }
 	}
 
 	/// <summary>

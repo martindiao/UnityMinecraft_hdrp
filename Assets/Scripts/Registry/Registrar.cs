@@ -40,6 +40,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<SulfurBlock>("sulfurBlock");
 		Registry.RegisterItem<OreSulfur>("oreSulfur");
 		Registry.RegisterItem<Water>("water");
+		Registry.RegisterItem<Clay>("clay");
 	}
 
 	void RegisterItems()
@@ -63,6 +64,9 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Charcoal>("charcoal");
 		Registry.RegisterItem<Sulfur>("sulfur");
 		Registry.RegisterItem<Gunpowder>("gunpowder");
+		Registry.RegisterItem<ClayBall>("clayBall");
+		Registry.RegisterItem<Brick>("brick");
+		Registry.RegisterItem<BrickBlock>("brickBlock");
 	}
 
 	void RegisterCraftingRecipes()
@@ -75,6 +79,15 @@ public class Registrar : MonoBehaviour
 				{null, null, null}
 			}, 
 			new CraftingResult("torch", 4)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"brick", "brick", "brick"},
+				{"brick", "brick", "brick"},
+				{"brick", "brick", "brick"}
+			}, 
+			new CraftingResult("brickBlock", 1)
 		));
 
 		CraftingRecipeRegistry.RegisterRecipe(

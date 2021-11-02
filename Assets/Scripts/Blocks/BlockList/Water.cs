@@ -7,7 +7,7 @@ public class Water: Block
     public Water(): base()
 	{
 		this.blockName 			= "water";
-		this.hardness 			= 20;
+		this.hardness 			= 0;
 		this.smeltable 			= false;
 		this.flowable			= true;
 	}
