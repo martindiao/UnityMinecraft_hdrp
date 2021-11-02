@@ -368,6 +368,9 @@ public class TerrainGenerator : MonoBehaviour
 		if (probability <= 6)
 			blockName = "oreCoal";
 
+		//if (probability <= 6)
+		//	blockName = "clay"; //tis a misery, but it can't spawn cause i'm running out of probability numbers (biomes will help a lot)
+
 		if (probability <= 5 && y > 25 && y < 58)
 			blockName = "oreIron";
 
