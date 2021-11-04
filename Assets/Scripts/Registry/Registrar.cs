@@ -41,6 +41,8 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<OreSulfur>("oreSulfur");
 		Registry.RegisterItem<Water>("water");
 		Registry.RegisterItem<Clay>("clay");
+		Registry.RegisterItem<Sand>("sand");
+		Registry.RegisterItem<Glass>("glass");
 	}
 
 	void RegisterItems()

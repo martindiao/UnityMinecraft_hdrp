@@ -12,6 +12,8 @@ public class TerrainGenerator : MonoBehaviour
 	*/
 
 	// Private instance of the FastNoise library by Jordan Peck.
+	public enum Biomes{Forest, Plains}
+    public Biomes biomes;
 	private FastNoise noise;
 
 	/// <summary>
