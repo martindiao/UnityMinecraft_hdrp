@@ -49,10 +49,10 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			if (GUI.isAGUIShown)
+			if (MineCraftGUI.isAGUIShown)
 				this.CloseInventory();
 			else
-				GUI.ShowPauseMenu();
+				MineCraftGUI.ShowPauseMenu();
 		}
     }
 
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
 	private void HandleInventoryKey()
 	{
-		if (GUI.isAGUIShown)
+		if (MineCraftGUI.isAGUIShown)
 			this.CloseInventory();
 		else
 			this.OpenInventory();
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 	private void KeepBreaking()
 	{
 		// Don't do anything if the inventory is open.
-		if (GUI.isAGUIShown)
+		if (MineCraftGUI.isAGUIShown)
 		{
 			if (this._breakingBlock)
 				this.ResetBreaking();
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void Interact()
 	{
-		if (GUI.isAGUIShown)
+		if (MineCraftGUI.isAGUIShown)
 			return;
 
 		IInteractable obj = TargetObject.Get() as IInteractable;
@@ -220,7 +220,7 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void OpenInventory()
 	{		
-		GUI.ShowPlayerInventory();
+		MineCraftGUI.ShowPlayerInventory();
 	}
 
 	/// <summary>
@@ -228,6 +228,6 @@ public class PlayerController : MonoBehaviour
 	/// </summary>
 	private void CloseInventory()
 	{
-		GUI.HideActiveUI();
+		MineCraftGUI.HideActiveUI();
 	}
 }

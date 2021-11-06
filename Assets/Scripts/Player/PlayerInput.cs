@@ -49,7 +49,7 @@ public class PlayerInput : MonoBehaviour
 
 	void Update()
 	{
-		if (GUI.isAGUIShown)
+		if (MineCraftGUI.isAGUIShown)
 			return;
 
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -62,7 +62,7 @@ public class PlayerInput : MonoBehaviour
 		float deltaX = Input.GetAxis("Horizontal");
 		float deltaY = Input.GetAxis("Vertical");
 
-		if (GUI.isAGUIShown)
+		if (MineCraftGUI.isAGUIShown)
 		{
 			deltaX = 0;
 			deltaY = 0;
@@ -94,7 +94,7 @@ public class PlayerInput : MonoBehaviour
 		// When moving diagonally, ||i+k|| > speed; "clamping" the movement vector's magnitude solves the issue.
 		movement_xz = Vector3.ClampMagnitude(movement_xz, this.speed);
 
-		if (grounded && this.jumping && !GUI.isAGUIShown)
+		if (grounded && this.jumping && !MineCraftGUI.isAGUIShown)
 		{
 			this.jumping = false;
 

@@ -5,7 +5,7 @@ public class PauseMenuUI : UserInterface
     // Start is called before the first frame update
     void Start()
     {
-		GUI.pauseMenuUI = this;
+		MineCraftGUI.pauseMenuUI = this;
         this.gameObject.SetActive(false);
     }
 
@@ -15,7 +15,7 @@ public class PauseMenuUI : UserInterface
 	/// </summary>
 	public void BackButtonOnClick()
 	{
-		GUI.HidePauseMenu();
+		MineCraftGUI.HidePauseMenu();
 	}
 
 	/// <summary>

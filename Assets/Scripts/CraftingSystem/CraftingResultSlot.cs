@@ -52,8 +52,8 @@ public class CraftingResultSlot : MonoBehaviour, IPointerDownHandler
 			if (requirement != null)
 				requirement.quantity--;
 
-		if (GUI.isAGUIShown)
-			GUI.activeGUI.UpdateGUI();
+		if (MineCraftGUI.isAGUIShown)
+			MineCraftGUI.activeGUI.UpdateGUI();
 
 		this.craftingGrid.OnItemsChanged();
 	}

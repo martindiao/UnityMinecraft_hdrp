@@ -48,7 +48,7 @@ public class RainbowGenerator: Block
 		particleSystem.transform.parent 		= chunk.chunkGameObject.transform;
 		particleSystem.transform.localPosition 	= placementCoords.Value;
 
-		GameObject.Find("Controller").GetComponent<Controller>().RunAfterDelay(GUI.ShowGameWonUI, 1.5f);
+		GameObject.Find("Controller").GetComponent<Controller>().RunAfterDelay(MineCraftGUI.ShowGameWonUI, 1.5f);
 
 		return placementCoords;
 	}

@@ -16,6 +16,6 @@ public class CraftingTable: Block
 	{
 		base.Interact();
 
-		GUI.ShowCraftingTableUI();
+		MineCraftGUI.ShowCraftingTableUI();
 	}
 }

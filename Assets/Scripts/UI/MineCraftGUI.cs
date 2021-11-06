@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class GUI
+public static class MineCraftGUI
 {
 	/// <summary>
 	/// Reference to the screen cover item dropper.
@@ -184,7 +184,7 @@ public static class GUI
 	public static void ShowGUIElements()
 	{
 		screenCoverRef.gameObject.SetActive(true);
-		GUI.hotbar.gameObject.SetActive(false);
+		MineCraftGUI.hotbar.gameObject.SetActive(false);
 		
 		Cursor.lockState 	= CursorLockMode.None;
 		Cursor.visible		= true;
@@ -197,8 +197,8 @@ public static class GUI
 	{
 		screenCoverRef.gameObject.SetActive(false);
 
-		GUI.hotbar.gameObject.SetActive(true);
-		GUI.hotbar.UpdateGUI();
+		MineCraftGUI.hotbar.gameObject.SetActive(true);
+		MineCraftGUI.hotbar.UpdateGUI();
 		
 		Cursor.lockState 	= CursorLockMode.Locked;
 		Cursor.visible		= false;

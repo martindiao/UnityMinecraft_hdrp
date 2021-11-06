@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour
 		//InventoryContainers.inventory.items[25] = new InventoryItem("charcaol");
 		//InventoryContainers.inventory.items[24] = new InventoryItem("saltpeter");
 
-		GUI.hotbar.UpdateGUI();
+		MineCraftGUI.hotbar.UpdateGUI();
     }
 
     // Update is called once per frame

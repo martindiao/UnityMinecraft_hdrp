@@ -113,7 +113,7 @@ public class FurnaceUI : UserInterface
 		this.smeltingSlot		= this.GetComponentInChildren<FurnaceSmeltingSlot>();
 		this.smeltedSlot		= this.GetComponentInChildren<FurnaceSmeltedSlot>();
 
-        GUI.furnaceUI 			= this;
+        MineCraftGUI.furnaceUI 			= this;
 		Clock.instance.AddTickDelegate(this.ClockTicked);
 
 		this.gameObject.SetActive(false);

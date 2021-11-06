@@ -30,7 +30,7 @@ public class MouseLook : MonoBehaviour
 	private float _rotationX = 0f;
     void Update()
     {
-		if (GameState.isPaused || GUI.isAGUIShown)
+		if (GameState.isPaused || MineCraftGUI.isAGUIShown)
 			return;
 			
         if (axes == RotationAxes.MouseX)

@@ -9,7 +9,7 @@ public class CraftingTableUI : UserInterface
     {
 		this.canBeOverlapped = true;
 
-        GUI.craftingTableUI = this;
+        MineCraftGUI.craftingTableUI = this;
 
 		this.gameObject.SetActive(false);
     }

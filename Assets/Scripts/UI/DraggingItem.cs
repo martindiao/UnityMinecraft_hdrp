@@ -6,7 +6,7 @@ public class DraggingItem : MonoBehaviour
 	void Awake()
 	{
 		InventoryContainers.draggingItemObject = this.gameObject;
-		GUI.draggingItemRef = this;
+		MineCraftGUI.draggingItemRef = this;
 		
 		this.gameObject.SetActive(false);
 	}

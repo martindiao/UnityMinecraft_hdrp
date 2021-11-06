@@ -32,7 +32,7 @@ public class Hotbar : MonoBehaviour
 		this.activeItemImgReference 			= this.transform.GetChild(0).gameObject;
 		this.activeItemImgFirstX				= this.transform.position.x - itemCellSize * 4;
 
-		GUI.hotbar = this;
+		MineCraftGUI.hotbar = this;
     }
 
     // Update is called once per frame

@@ -56,7 +56,7 @@ public static class PlayerInventoryManager
 		if (hotbarItems[activeItemIndex].quantity == 0)
 			hotbarItems[activeItemIndex] = null;
 
-		GUI.hotbar.UpdateGUI();
+		MineCraftGUI.hotbar.UpdateGUI();
 
 		return true;
 	}
@@ -184,8 +184,8 @@ public static class PlayerInventoryManager
 				hotbarItems[hotbarPlacement.position].quantity += quantityPlaced;
 		}
 
-		GUI.hotbar.UpdateGUI();
-		GUI.playerInventoryUI.UpdateGUI();
+		MineCraftGUI.hotbar.UpdateGUI();
+		MineCraftGUI.playerInventoryUI.UpdateGUI();
 
 		return quantityPlaced;
 	}
@@ -195,7 +195,7 @@ public static class PlayerInventoryManager
 	/// </summary>
 	public static void UpdateGUI()
 	{
-		GUI.playerInventoryUI.UpdateGUI();
+		MineCraftGUI.playerInventoryUI.UpdateGUI();
 	}
 
 	/// <summary>

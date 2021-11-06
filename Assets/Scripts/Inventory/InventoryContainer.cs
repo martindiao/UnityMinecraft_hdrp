@@ -117,8 +117,8 @@ public class InventoryContainer : MonoBehaviour
 			if (this.items[i]?.quantity == 0)
 				this.items[i] = null;
 
-		if (GUI.isAGUIShown)
-			GUI.activeGUI.UpdateGUI();
+		if (MineCraftGUI.isAGUIShown)
+			MineCraftGUI.activeGUI.UpdateGUI();
 
 		if (this.itemsChangedEvent != null)
 			this.itemsChangedEvent();

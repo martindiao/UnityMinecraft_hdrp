@@ -5,7 +5,7 @@ public class GameWonUI : UserInterface
     // Start is called before the first frame update
     void Start()
     {
-		GUI.gameWonUI = this;
+		MineCraftGUI.gameWonUI = this;
         this.gameObject.SetActive(false);
     }
 
@@ -15,7 +15,7 @@ public class GameWonUI : UserInterface
 	/// </summary>
 	public void KeepPlayingButtonOnClick()
 	{
-		GUI.HideGameWonUI();
+		MineCraftGUI.HideGameWonUI();
 	}
 
 	/// <summary>

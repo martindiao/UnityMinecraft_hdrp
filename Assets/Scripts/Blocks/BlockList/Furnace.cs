@@ -15,6 +15,6 @@
 	{
 		base.Interact();
 
-		GUI.ShowFurnaceUI();
+		MineCraftGUI.ShowFurnaceUI();
 	}
 }

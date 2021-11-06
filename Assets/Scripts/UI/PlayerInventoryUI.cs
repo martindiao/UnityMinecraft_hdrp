@@ -22,7 +22,7 @@ public class PlayerInventoryUI : UserInterface
     {
 		this.canBeOverlapped = false;
 
-		GUI.playerInventoryUI = this;
+		MineCraftGUI.playerInventoryUI = this;
 		
 		this.gameObject.SetActive(false);
     }

@@ -15,7 +15,7 @@ public class ScreenCoverItemDropper : MonoBehaviour
 		GameObject.Find("InventoryBG").GetComponent<RectTransform>().GetWorldCorners(corners);
 		this.inventoryBGRect = new Rect(corners[0], corners[2] - corners[0]);
 
-		GUI.screenCoverRef = this;
+		MineCraftGUI.screenCoverRef = this;
 		
 		this.gameObject.SetActive(false);
 	}
