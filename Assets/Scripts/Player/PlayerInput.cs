@@ -5,9 +5,7 @@ using Extensions;
 
 public class PlayerInput : MonoBehaviour
 {
-	bool expandFOVnow = false;
-
-	bool decreaceFOVnow = false;
+	public bool expandFOVnow = false;
 	public float tapSpeed = 0.5f; //in seconds
  
 	private float lastTapTime = 0;
@@ -67,6 +65,7 @@ public class PlayerInput : MonoBehaviour
 		} else if (Input.GetKeyUp(KeyCode.W))
 		{
 			this.speed = walkingSpeed;
+			expandFOVnow = false;
 		}
 
 		if (MineCraftGUI.isAGUIShown)
@@ -78,18 +77,14 @@ public class PlayerInput : MonoBehaviour
 		if (expandFOVnow)
 			gameObject.GetComponentInChildren<Camera>().fieldOfView ++;
 
-		if (gameObject.GetComponentInChildren<Camera>().fieldOfView == 100 && this.speed == walkingSpeed)
-			//expandFOVnow = false;
-			decreaceFOVnow = true;
-
-		if (decreaceFOVnow)
+		if (!expandFOVnow)
 			gameObject.GetComponentInChildren<Camera>().fieldOfView --;
 
-		if (gameObject.GetComponentInChildren<Camera>().fieldOfView >= 100)
-			gameObject.GetComponentInChildren<Camera>().fieldOfView = 100;
+		if (gameObject.GetComponentInChildren<Camera>().fieldOfView >= 90)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView = 90;
 
-		//if (gameObject.GetComponentInChildren<Camera>().fieldOfView < 60)
-		//	gameObject.GetComponentInChildren<Camera>().fieldOfView = 60;
+		if (gameObject.GetComponentInChildren<Camera>().fieldOfView <= 60 && this.speed == walkingSpeed)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView = 60;
 	}
 
     // Update is called once per frame
