@@ -5,6 +5,13 @@ using Extensions;
 
 public class PlayerInput : MonoBehaviour
 {
+	bool expandFOVnow = false;
+
+	bool decreaceFOVnow = false;
+	public float tapSpeed = 0.5f; //in seconds
+ 
+	private float lastTapTime = 0;
+
 	/// <summary>
 	/// The rate of change of the player's position over time.
 	/// </summary>
@@ -18,7 +25,7 @@ public class PlayerInput : MonoBehaviour
 	/// <summary>
 	/// The speed at which the player runs.
 	/// </summary>
-	private const float runningSpeed = 5.612f;
+	private const float runningSpeed = 8.612f;
 
 	/// <summary>
 	/// Height of the jump that can be performed by the player.
@@ -45,15 +52,44 @@ public class PlayerInput : MonoBehaviour
     {
 		this._rigidbody = this.GetComponent<Rigidbody>();
 		this.speed = walkingSpeed;
+		lastTapTime = 0;
     }
 
 	void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.W)){
+			if((Time.time - lastTapTime) < tapSpeed){
+				this.speed = runningSpeed;
+
+				expandFOVnow = true;
+			}
+			lastTapTime = Time.time;
+		} else if (Input.GetKeyUp(KeyCode.W))
+		{
+			this.speed = walkingSpeed;
+		}
+
 		if (MineCraftGUI.isAGUIShown)
 			return;
 
 		if (Input.GetKeyDown(KeyCode.Space))
 			this.jumping = true;
+
+		if (expandFOVnow)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView ++;
+
+		if (gameObject.GetComponentInChildren<Camera>().fieldOfView == 100 && this.speed == walkingSpeed)
+			//expandFOVnow = false;
+			decreaceFOVnow = true;
+
+		if (decreaceFOVnow)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView --;
+
+		if (gameObject.GetComponentInChildren<Camera>().fieldOfView >= 100)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView = 100;
+
+		//if (gameObject.GetComponentInChildren<Camera>().fieldOfView < 60)
+		//	gameObject.GetComponentInChildren<Camera>().fieldOfView = 60;
 	}
 
     // Update is called once per frame
