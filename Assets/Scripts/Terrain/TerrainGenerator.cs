@@ -248,7 +248,7 @@ public class TerrainGenerator : MonoBehaviour
 
 		float baselineLandHeight 	= Chunk.chunkHeight * 0.5f + landSimplex1 + landSimplex2;
 		float baselineStoneHeight 	= Chunk.chunkHeight * 0.47f + stoneSimplex1 + stoneSimplex1;
-		float baselineCaveHeight 	= Chunk.chunkHeight * 0.2f;
+		float baselineCaveHeight 	= Chunk.chunkHeight * 0.48f;
 
 		string blockType = "air";
 
@@ -361,10 +361,10 @@ public class TerrainGenerator : MonoBehaviour
 
 		string blockName = "stone";
 		
-		if (probability <= 8 && y > 25 && y < 58)
+		if (probability <= 8)
 			blockName = "rockLimestone";
 		
-		if (probability <= 7 && y > 25 && y < 58)
+		if (probability <= 7)
 			blockName = "saltpeterOre";
 		
 		if (probability <= 6)
@@ -373,19 +373,19 @@ public class TerrainGenerator : MonoBehaviour
 		//if (probability <= 6)
 		//	blockName = "clay"; //tis a misery, but it can't spawn cause i'm running out of probability numbers (biomes will help a lot)
 
-		if (probability <= 5 && y > 25 && y < 58)
+		if (probability <= 5 && y > 25 && y < 150)
 			blockName = "oreIron";
 
-		if (probability <= 1 && y <= 25)
+		if (probability <= 3 && y <= 85)
 			blockName = "oreGold";
 
-		if (probability <= 2 && y <= 20)
+		if (probability <= 2 && y <= 95)
 			blockName = "oreRedstone";
 
-		if (probability <= 4 && y <= 14)
+		if (probability <= 4 && y <= 105)
 			blockName = "oreSulfur";
 
-		if (probability <= 1 && y <= 14)
+		if (probability <= 1 && y <= 95)
 			if (probabilityDiamond > 47)
 				blockName = "oreDiamond";
 			else
