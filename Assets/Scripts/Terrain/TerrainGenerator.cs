@@ -247,7 +247,7 @@ public class TerrainGenerator : MonoBehaviour
 		) * .3f;
 
 		float baselineLandHeight 	= Chunk.chunkHeight * 0.5f + landSimplex1 + landSimplex2;
-		float baselineStoneHeight 	= Chunk.chunkHeight * 0.40f + stoneSimplex1 + stoneSimplex1;
+		float baselineStoneHeight 	= Chunk.chunkHeight * 0.47f + stoneSimplex1 + stoneSimplex1;
 		float baselineCaveHeight 	= Chunk.chunkHeight * 0.2f;
 
 		string blockType = "air";

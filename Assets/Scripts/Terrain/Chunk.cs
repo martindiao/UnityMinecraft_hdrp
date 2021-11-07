@@ -24,7 +24,7 @@ public class Chunk
 	/// <summary>
 	/// y-size of the chunk.
 	/// </summary>
-	public static int chunkHeight = 128;
+	public static int chunkHeight = 350;
 
 	/// <summary>
 	/// Private reference to the game object first created by BuildMesh().
