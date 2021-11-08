@@ -263,7 +263,7 @@ public class TerrainGenerator : MonoBehaviour
 		if (j <= baselineStoneHeight)
 			blockType = "stone";
 		
-		if (j >= 40 && j < 63 && blockType == "air")
+		if (j >= 40 && j < 173 && blockType == "air")
 			blockType = "water";
 
 		//if (j <= baselineStoneHeight)
@@ -276,6 +276,14 @@ public class TerrainGenerator : MonoBehaviour
 			blockType = "bedrock";
 
 		return Registry.Instantiate(blockType) as BaseBlock;
+	}
+
+	private void waterFlow(BaseBlock[,,] blocks)
+	{
+		if (blocks[1, 1, 1].blockName == "air")
+		{
+			//flow water, flow!
+		}
 	}
 
 	/// <summary>
