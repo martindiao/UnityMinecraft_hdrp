@@ -212,7 +212,7 @@ public class TerrainGenerator : MonoBehaviour
 		float landSimplex1 = this.noise.GetSimplex(
 			i * 0.8f, 
 			k * 0.8f
-		) * 10f;
+		) * 10f;//makes the grass humps more defined
 
 		float landSimplex2 = this.noise.GetSimplex(
 			i * 3.5f, 
@@ -225,7 +225,7 @@ public class TerrainGenerator : MonoBehaviour
 		float stoneSimplex1 = this.noise.GetSimplex(
 			i * 2f,
 			k * 2f
-		) * 10;
+		) * 10;//makes the stone humps more defined
 
 		float stoneSimplex2 = (this.noise.GetSimplex(
 			i * 2.1f,
@@ -236,10 +236,10 @@ public class TerrainGenerator : MonoBehaviour
 		);
 
 		float caveFractal = this.noise.GetPerlinFractal(
-			i * 5f,
-			j * 3f,
-			k * 5f
-		) * 1.1f;
+			i * 5f,//the smaller the number, the longer the cave gets on the x axis
+			j * 3f,//the smaller the number, the longer the cave gets on the y axis
+			k * 5f//the smaller the number, the longer the cave gets on the z axis
+		) * 1.1f;//the chance of a cave (how common caves)
 
 		float caveFractalMask = this.noise.GetSimplex(
 			i * .45f,
