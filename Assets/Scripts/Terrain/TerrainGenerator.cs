@@ -202,7 +202,10 @@ public class TerrainGenerator : MonoBehaviour
 						PCTerrain.GetInstance().blocks[(i,j,k).ToVector3Int()] = Registry.Instantiate(block.blockName) as Block;
 				}
 
-		this.GenerateTrees(x, z, blocks);
+		if (biomes == Biomes.Forest)
+		{
+			this.GenerateTrees(x, z, blocks);
+		}
 	}
 
 	/// <summary>
