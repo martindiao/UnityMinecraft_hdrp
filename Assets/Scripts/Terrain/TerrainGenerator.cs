@@ -14,6 +14,7 @@ public class TerrainGenerator : MonoBehaviour
 	// Private instance of the FastNoise library by Jordan Peck.
 	public enum Biomes{Forest, Plains}
     public Biomes biomes;
+	BaseBlock[,,] blocks;
 	private FastNoise noise;
 
 	/// <summary>
@@ -276,14 +277,6 @@ public class TerrainGenerator : MonoBehaviour
 			blockType = "bedrock";
 
 		return Registry.Instantiate(blockType) as BaseBlock;
-	}
-
-	private void waterFlow(BaseBlock[,,] blocks)
-	{
-		if (blocks[1, 1, 1].blockName == "air")
-		{
-			//flow water, flow!
-		}
 	}
 
 	/// <summary>
