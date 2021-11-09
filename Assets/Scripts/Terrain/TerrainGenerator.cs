@@ -243,7 +243,7 @@ public class TerrainGenerator : MonoBehaviour
 			i * 5f,//the smaller the number, the longer the cave gets on the x axis
 			j * 3f,//the smaller the number, the longer the cave gets on the y axis
 			k * 5f//the smaller the number, the longer the cave gets on the z axis
-		) * 1.1f;//the chance of a cave (how common caves)
+		) * 1.1f;//how common caves are
 
 		float caveFractalMask = this.noise.GetSimplex(
 			i * .45f,
