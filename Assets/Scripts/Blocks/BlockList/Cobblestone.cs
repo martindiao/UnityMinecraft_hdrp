@@ -9,7 +9,7 @@ public class Cobblestone: Block
 		this.blockName 			= "cobblestone";
 		this.hardness 			= 3 * 20;
 		this.smeltable 			= true;
-		this.smeltedResult		= new CraftingResult("stone", 1);//change to petroleum for tests
+		this.smeltedResult		= new CraftingResult("stone", 1);
 		this.toolTypeRequired 	= ToolType.PICKAXE;
 	}
 }
