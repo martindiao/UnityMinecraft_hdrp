@@ -45,6 +45,7 @@ yeh, I might change the name.
         Shovels
         Swords
         Bow and Arrows
+        Shield
     Biomes
         Plains
         Forest
@@ -90,6 +91,7 @@ yeh, I might change the name.
     Fog
     Clouds
     Rain
+    Damage taking and hunger
 
 
 ## Credit
