@@ -92,6 +92,7 @@ yeh, I might change the name.
     Clouds
     Rain
     Damage taking and hunger
+    Hand animation and the showing of tools in it
 
 
 ## Credit
