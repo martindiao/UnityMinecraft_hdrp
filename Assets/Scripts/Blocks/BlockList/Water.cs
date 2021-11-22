@@ -8,7 +8,5 @@ public class Water: Block
 	{
 		this.blockName 			= "water";
 		this.hardness 			= 0;
-		this.smeltable 			= false;
-		this.flowable			= true;
 	}
 }

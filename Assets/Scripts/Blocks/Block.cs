@@ -12,8 +12,6 @@ public abstract class Block: BaseBlock, IInteractable
 	/// </summary>
 	public string id;
 
-	public bool flowable = false;
-
 	/// <summary>
 	/// (x,y,z) Voxel world coordinates of the current block. 
 	/// </summary>
