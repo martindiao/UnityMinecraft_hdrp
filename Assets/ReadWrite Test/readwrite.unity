@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5325, y: -103.6}
+  m_AnchoredPosition: {x: -1.5325, y: -37.779015}
   m_SizeDelta: {x: 159.93, y: 19.5518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &325330662
@@ -326,7 +326,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Convert playerdata to JSON
+  m_Text: 'Write converted
+
+    data to file'
 --- !u!222 &355447929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -596,7 +598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5, y: -33.821}
+  m_AnchoredPosition: {x: -1.5, y: 32}
   m_SizeDelta: {x: 160, y: 117.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676219107
@@ -702,6 +704,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676219105}
   m_CullTransparentMesh: 1
+--- !u!1 &784630418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784630419}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &784630419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784630418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994021114
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048145257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.92758, y: 233.89069, z: 174.54057}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -874,7 +906,7 @@ GameObject:
   - component: {fileID: 1243767135}
   - component: {fileID: 1243767134}
   m_Layer: 5
-  m_Name: toJSONbutton
+  m_Name: changeplayerdatabutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5647888, y: 52.6}
+  m_AnchoredPosition: {x: -1.5647888, y: 143}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243767134
@@ -946,7 +978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1048145260}
         m_TargetAssemblyTypeName: playerdata, Assembly-CSharp
-        m_MethodName: toJSON
+        m_MethodName: CreateJSONCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
