@@ -1,5 +1,5 @@
 {
     "level": 1,
     "timeElapsed": 47.5,
-    "playerName": "Mr Yeet"
+    "playerName": "Mr Yeety"
 }

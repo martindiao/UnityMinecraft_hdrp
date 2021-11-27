@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf8c9d402be546459d118984467785f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biomes: 0
+  biomes: 2
 --- !u!114 &470663925
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,13 +36,13 @@ public class playerdata : MonoBehaviour
         //File.Delete(path);
         //File.WriteAllText(path, content);
 
-        //Reads the contents of data.txt...
+        //Assigns the contents of data.txt to json...
         json = File.ReadAllText(path);
 
         //Overwrites the data in the myObject class with new data...
         JsonUtility.FromJsonOverwrite(json, myObject);
 
-        //And finally prints the data values of myObject.
+        //And finally prints the data values.
         Debug.Log(json);
     }
 }
