@@ -13,7 +13,7 @@ public class TerrainGenerator : MonoBehaviour
 	*/
 
 	// Private instance of the FastNoise library by Jordan Peck.
-	public enum Biomes{Forest, Plains, Village}
+	public enum Biomes{Forest, Plains, Village, Mountains}
     public Biomes biomes;
 	private FastNoise noise;
 
@@ -208,10 +208,10 @@ public class TerrainGenerator : MonoBehaviour
 			this.GenerateTrees(x, z, blocks);
 		}
 		//uncomment this for randomly spawning half-finished buildings, but if you do the chunk generation will be messed up.
-		/*if (biomes == Biomes.Village)
+		if (biomes == Biomes.Village)
 		{
 			this.GenerateThings(x, z, blocks);
-		}*/
+		}
 	}
 
 	/// <summary>
@@ -227,7 +227,14 @@ public class TerrainGenerator : MonoBehaviour
 				i * 0.8f, 
 				k * 0.8f
 			) - 2;
-		} else {
+		} else if (biomes == Biomes.Mountains) 
+		{
+			landSimplex1 = this.noise.GetSimplex(
+				i * 0.8f, 
+				k * 0.8f
+			) * 17;
+		}
+		else {
 			landSimplex1 = this.noise.GetSimplex(
 				i * 0.8f, 
 				k * 0.8f

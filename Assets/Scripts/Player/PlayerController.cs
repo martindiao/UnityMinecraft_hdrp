@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 			this.HandleInventoryKey();
 
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
 		{
 			if (MineCraftGUI.isAGUIShown)
 				this.CloseInventory();
