@@ -5,6 +5,9 @@ using Extensions;
 public class Controller : MonoBehaviour
 {
 	public Text positionText;
+	public enum Weather{Fair, Rainy, Foggy, Snowy, Thunder}
+	public Weather weatherType;
+	public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,26 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (weatherType == Weather.Foggy)
+		{
+			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeEnabled = true;
+			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeStart = 0;
+			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeLength = 15;
+			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeToIntensity = 0.156f;
+
+			RenderSettings.fog = true;
+
+			GameObject.FindObjectOfType<Light>().shadows = LightShadows.None;
+
+			//player.GetComponentInChildren<Camera>().backgroundColor = Color.Lerp(Color., color2, 100);
+		} else
+		{
+			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeEnabled = false;
+
+			RenderSettings.fog = false;
+
+			GameObject.FindObjectOfType<Light>().shadows = LightShadows.Soft;
+		}
 		Vector3Int p = Player.instance.GetVoxelPosition();
 		ChunkPosition cp = Player.instance.GetVoxelChunk();
 		this.positionText.text = System.String.Format("({0},{1},{2}) ({3},{4})", p.x, p.y, p.z, cp.x, cp.z);
