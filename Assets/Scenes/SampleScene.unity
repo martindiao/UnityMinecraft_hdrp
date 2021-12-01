@@ -1539,6 +1539,8 @@ MonoBehaviour:
   positionText: {fileID: 0}
   weatherType: 0
   player: {fileID: 1300987409}
+  playercamBackgroundColor1: {r: 0.87058824, g: 0.87058824, b: 0.87058824, a: 1}
+  playercamBackgroundColor2: {r: 0.5294118, g: 0.69411767, b: 0.9607843, a: 1}
 --- !u!4 &470663921
 Transform:
   m_ObjectHideFlags: 0

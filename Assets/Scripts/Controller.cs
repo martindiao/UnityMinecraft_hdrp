@@ -8,6 +8,8 @@ public class Controller : MonoBehaviour
 	public enum Weather{Fair, Rainy, Foggy, Snowy, Thunder}
 	public Weather weatherType;
 	public GameObject player;
+	public Color playercamBackgroundColor1;
+	public Color playercamBackgroundColor2;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class Controller : MonoBehaviour
 
 			GameObject.FindObjectOfType<Light>().shadows = LightShadows.None;
 
-			//player.GetComponentInChildren<Camera>().backgroundColor = Color.Lerp(Color., color2, 100);
+			player.GetComponentInChildren<Camera>().backgroundColor = playercamBackgroundColor1;
 		} else
 		{
 			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeEnabled = false;
@@ -45,6 +47,8 @@ public class Controller : MonoBehaviour
 			RenderSettings.fog = false;
 
 			GameObject.FindObjectOfType<Light>().shadows = LightShadows.Soft;
+
+			player.GetComponentInChildren<Camera>().backgroundColor = playercamBackgroundColor2;
 		}
 		Vector3Int p = Player.instance.GetVoxelPosition();
 		ChunkPosition cp = Player.instance.GetVoxelChunk();
