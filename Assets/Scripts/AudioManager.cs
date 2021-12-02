@@ -8,7 +8,7 @@ static class AudioManager
 	private static Controller controllerRef;
 
 	/// <summary>
-	/// Given a clip name in Resources, creates a GameObject containing the 3D AudioSource that can ben attached
+	/// Given a clip name in Resources, creates a GameObject containing the 3D AudioSource that can be attached
 	/// to another GameObject and used accordingly. Returns the GameObject's AudioSource component.
 	/// Of course, this is not thread-safe. Thanks, Unity.
 	/// </summary>

@@ -5,6 +5,7 @@ using Extensions;
 using System.Threading;
 using System;
 using System.IO;
+using UnityEngine.UI;
 public class TerrainGenerator : MonoBehaviour
 {
 	/**
@@ -15,6 +16,7 @@ public class TerrainGenerator : MonoBehaviour
 	// Private instance of the FastNoise library by Jordan Peck.
 	public enum Biomes{Forest, Plains, Village, Mountains}
     public Biomes biomes;
+	public Text renderText;
 	private FastNoise noise;
 
 	/// <summary>
@@ -24,7 +26,7 @@ public class TerrainGenerator : MonoBehaviour
 
 	private int chunkMatrixSize = 5;
 
-	private int chunkRenderDistance = 5;
+	public int chunkRenderDistance = 5;
 
 	/// <summary>
 	/// Used to notify the main thread when a chunk has been generated to rebuild chunk meshes.
@@ -51,6 +53,8 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (this.previousPlayerPosition == currentPlayerPosition)
 			return;
+		
+		chunkRenderDistance = int.Parse(renderText.text);
 
 		GameObject[] chunks = GameObject.FindGameObjectsWithTag("chunk");
 		foreach (GameObject _chunk in chunks)
@@ -504,5 +508,10 @@ public class TerrainGenerator : MonoBehaviour
 				blockName = "oreEmerald";
 
 		return blockName;
+	}
+
+	public void changeRenderDistance(float amount)
+	{
+		//change the rencer distance
 	}
 }
