@@ -14,7 +14,7 @@ public class TerrainGenerator : MonoBehaviour
 	*/
 
 	// Private instance of the FastNoise library by Jordan Peck.
-	public enum Biomes{Forest, Plains, Village, Mountains}
+	public enum Biomes{Forest, Plains, Village, Mountains, Desert}
     public Biomes biomes;
 	public Text renderText;
 	private FastNoise noise;
@@ -231,7 +231,7 @@ public class TerrainGenerator : MonoBehaviour
 			landSimplex1 = this.noise.GetSimplex(
 				i * 0.8f, 
 				k * 0.8f
-			) * 17;
+			) * 24;
 		}
 		else {
 			landSimplex1 = this.noise.GetSimplex(
@@ -284,6 +284,16 @@ public class TerrainGenerator : MonoBehaviour
 
 			if (j == Mathf.FloorToInt(baselineLandHeight))
 				blockType = "grass";
+			//if (j == Mathf.FloorToInt(baselineLandHeight) + 1)
+				//blockType = "snow";
+		}
+
+		if (j <= baselineLandHeight && biomes == Biomes.Desert)
+		{
+			blockType = "sand";
+
+			if (j == Mathf.FloorToInt(baselineLandHeight))
+				blockType = "sand";
 		}
 
 		if (j <= baselineStoneHeight)

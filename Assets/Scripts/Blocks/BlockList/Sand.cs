@@ -10,5 +10,6 @@
 		this.smeltable 			= true;
 		this.smeltedResult 		= new CraftingResult("glass", 1);
 		this.toolTypeRequired 	= ToolType.ANY;
+		this.soundType 			= BlockSoundType.DIRT;
 	}
 }

@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf8c9d402be546459d118984467785f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biomes: 2
+  biomes: 3
   renderText: {fileID: 559632465}
   chunkRenderDistance: 5
 --- !u!114 &470663925

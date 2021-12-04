@@ -43,6 +43,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Clay>("clay");
 		Registry.RegisterItem<Sand>("sand");
 		Registry.RegisterItem<Glass>("glass");
+		Registry.RegisterItem<Snow>("snow");
 	}
 
 	void RegisterItems()
@@ -69,6 +70,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<ClayBall>("clayBall");
 		Registry.RegisterItem<Brick>("brick");
 		Registry.RegisterItem<BrickBlock>("brickBlock");
+		Registry.RegisterItem<Snowball>("snowball");
 	}
 
 	void RegisterCraftingRecipes()

@@ -8,5 +8,6 @@
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.toolTypeRequired 	= ToolType.ANY;
+		this.soundType 			= BlockSoundType.STONE;
 	}
 }
