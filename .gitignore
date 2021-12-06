@@ -37,7 +37,7 @@ Packages/
 Assets/TextMesh Pro/
 Assets/AmplifyOcclusion/
 UniBuild/
-Assets/Plugins/MoonSharp/
+Assets/Plugins/
 *.csproj
 *.unityproj
 *.sln
