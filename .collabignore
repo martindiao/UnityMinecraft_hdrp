@@ -31,3 +31,9 @@ ehthumbs.db
 [Bb]uild
 sysinfo.txt
 *.stackdump
+
+
+Assets/Plugins/
+Assets/TextMesh Pro/
+Assets/AmplifyOcclusion/
+UniBuild/

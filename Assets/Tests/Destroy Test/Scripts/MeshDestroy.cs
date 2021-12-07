@@ -20,12 +20,18 @@ public class MeshDestroy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             DestroyMesh();
         }
+    }*/
+
+    public void OnCollisionEnter()
+    {
+        DestroyMesh();
+        Debug.Log("crack");
     }
 
     private void DestroyMesh()
@@ -71,7 +77,6 @@ public class MeshDestroy : MonoBehaviour
         {
             parts[i].MakeGameobject(this);
             parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
-            parts[i].GameObject.GetComponent<MeshDestroy>().enabled = false;
         }
 
         Destroy(gameObject);
