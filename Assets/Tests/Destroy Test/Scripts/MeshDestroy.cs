@@ -71,7 +71,7 @@ public class MeshDestroy : MonoBehaviour
         {
             parts[i].MakeGameobject(this);
             parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
-            parts[i].GameObject.GetComponent<MeshDestroy>().enabled = false;
+            //parts[i].GameObject.GetComponent<MeshDestroy>().enabled = false;
         }
 
         Destroy(gameObject);
