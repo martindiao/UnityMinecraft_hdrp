@@ -272,6 +272,17 @@ public class TerrainGenerator : MonoBehaviour
 			k * .45f	
 		) * .3f;
 
+		float landHoleFractal = this.noise.GetPerlinFractal(
+			i * 5f,//the smaller the number, the longer the things gets on the x axis
+			j * 3f,//the smaller the number, the longer the things gets on the y axis
+			k * 5f//the smaller the number, the longer the things gets on the z axis
+		) * 0.7f;//how common things are
+
+		float landHoleFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
 		float baselineLandHeight 	= Chunk.chunkHeight * 0.5f + landSimplex1 + landSimplex2;
 		float baselineStoneHeight 	= Chunk.chunkHeight * 0.47f + stoneSimplex1 + stoneSimplex1;
 		float baselineCaveHeight 	= Chunk.chunkHeight * 0.48f;
@@ -306,6 +317,9 @@ public class TerrainGenerator : MonoBehaviour
 		//	blockType = "limestone";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
+			blockType = "air";
+
+		if (landHoleFractal > Mathf.Max(.2f, landHoleFractalMask) && j <= baselineLandHeight)
 			blockType = "air";
 
 		if (j <= 2)
