@@ -262,9 +262,9 @@ public class TerrainGenerator : MonoBehaviour
 		);
 
 		float caveFractal = this.noise.GetPerlinFractal(
-			i * 7f,//the smaller the number, the longer the cave gets on the x axis
-			j * 5f,//the smaller the number, the longer the cave gets on the y axis
-			k * 7f//the smaller the number, the longer the cave gets on the z axis
+			i * 5f,//the smaller the number, the longer the cave gets on the x axis
+			j * 3f,//the smaller the number, the longer the cave gets on the y axis
+			k * 5f//the smaller the number, the longer the cave gets on the z axis
 		) * 1.1f;//how common caves are
 
 		float caveFractalMask = this.noise.GetSimplex(
