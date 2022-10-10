@@ -20,7 +20,7 @@ public class Controller : MonoBehaviour
 
 		//InventoryContainers.inventory.items[26] = new InventoryItem("rainbowGenerator");
 		//InventoryContainers.inventory.items[25] = new InventoryItem("charcaol");
-		//InventoryContainers.inventory.items[24] = new InventoryItem("saltpeter");
+		InventoryContainers.inventory.items[24] = new InventoryItem("glass");
 
 		MineCraftGUI.hotbar.UpdateGUI();
     }
