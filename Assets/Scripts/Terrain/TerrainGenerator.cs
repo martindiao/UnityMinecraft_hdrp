@@ -40,7 +40,7 @@ public class TerrainGenerator : MonoBehaviour
 
 	void Start()
 	{
-		this.noise = new FastNoise();
+		this.noise = new FastNoise(1337);
 
 		this.GenerateStartingTerrain();
 		this.previousPlayerPosition = Player.instance.GetVoxelChunk();
