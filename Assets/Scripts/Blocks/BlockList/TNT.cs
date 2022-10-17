@@ -11,4 +11,9 @@ public class TNT: Block
 		this.hardness 			= 3 * 20;
 		this.soundType 			= BlockSoundType.WOOD;
 	}
+	public override void Interact()
+	{
+		//
+		base.Interact();
+	}
 }
