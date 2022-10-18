@@ -42,7 +42,8 @@ public class TerrainGenerator : MonoBehaviour
 	void Start()
 	{
 		this.noise = new FastNoise();
-		this.noise.SetSeed(1337);//USE THIS TO SET THE SEEEEEEEEEEEEEEEEEEEEED
+		this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
+		//this.noise.SetSeed(UnityEngine.Random.Range(0, 9999));//USE THIS TO RANDOMIZE THE SEED
 
 		this.GenerateStartingTerrain();
 		this.previousPlayerPosition = Player.instance.GetVoxelChunk();
@@ -274,11 +275,33 @@ public class TerrainGenerator : MonoBehaviour
 			k * .45f	
 		) * .3f;
 
+		float limestoneFractal = this.noise.GetPerlinFractal(
+			i * 10f,
+			j * 10f,
+			k * 10f
+		) * .6f;
+
+		float saltpeterFractal = this.noise.GetPerlinFractal(
+			i * 10f,
+			j * 10f,
+			k * 10f
+		) * 0.45f;
+
+		float saltpeterFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
+		float limestoneFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
 		float landHoleFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the things gets on the x axis
 			j * 3f,//the smaller the number, the longer the things gets on the y axis
 			k * 5f//the smaller the number, the longer the things gets on the z axis
-		) * 0.7f;//how common things are
+		) * 0.7f;//how common the things are
 
 		float landHoleFractalMask = this.noise.GetSimplex(
 			i * .45f,
@@ -317,6 +340,12 @@ public class TerrainGenerator : MonoBehaviour
 
 		//if (j <= baselineStoneHeight)
 		//	blockType = "limestone";
+
+		if (limestoneFractal > Mathf.Max(.2f, limestoneFractalMask) && j <= baselineCaveHeight)
+			blockType = "rockLimestone";
+
+		if (saltpeterFractal > Mathf.Max(.2f, saltpeterFractalMask) && j <= baselineCaveHeight && blockType == "rockLimestone")
+			blockType = "saltpeterOre";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";
@@ -413,11 +442,11 @@ public class TerrainGenerator : MonoBehaviour
 
 		string blockName = "stone";
 		
-		if (probability <= 8)
-			blockName = "rockLimestone";
+		//if (probability <= 8)
+			//blockName = "rockLimestone";
 		
-		if (probability <= 7)
-			blockName = "saltpeterOre";
+		//if (probability <= 7)
+		//	blockName = "saltpeterOre";
 		
 		if (probability <= 6)
 			blockName = "oreCoal";
