@@ -70,7 +70,7 @@ public class FastNoise
 
 	private FN_DECIMAL m_gradientPerturbAmp = (FN_DECIMAL)1.0;
 
-	public FastNoise(int seed)
+	public FastNoise(int seed = 1337)
 	{
 		m_seed = seed;
 		CalculateFractalBounding();

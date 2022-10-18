@@ -14,6 +14,7 @@ public class TerrainGenerator : MonoBehaviour
 	*/
 
 	// Private instance of the FastNoise library by Jordan Peck.
+	//public int seed = 1337;
 	public enum Biomes{Forest, Plains, Village, Mountains, Desert}
     public Biomes biomes;
 	public Text renderText;
@@ -40,7 +41,8 @@ public class TerrainGenerator : MonoBehaviour
 
 	void Start()
 	{
-		this.noise = new FastNoise(1337);
+		this.noise = new FastNoise();
+		this.noise.SetSeed(1337);//USE THIS TO SET THE SEEEEEEEEEEEEEEEEEEEEED
 
 		this.GenerateStartingTerrain();
 		this.previousPlayerPosition = Player.instance.GetVoxelChunk();
