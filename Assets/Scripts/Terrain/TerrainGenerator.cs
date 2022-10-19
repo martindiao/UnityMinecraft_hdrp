@@ -477,6 +477,6 @@ public class TerrainGenerator : MonoBehaviour
 
 	public void changeRenderDistance(float amount)
 	{
-		//change the rencer distance
+		//
 	}
 }

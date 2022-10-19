@@ -71,6 +71,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Brick>("brick");
 		Registry.RegisterItem<BrickBlock>("brickBlock");
 		Registry.RegisterItem<Snowball>("snowball");
+		Registry.RegisterItem<RawIron>("rawIron");
 	}
 
 	void RegisterCraftingRecipes()

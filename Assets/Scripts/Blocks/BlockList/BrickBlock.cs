@@ -8,5 +8,6 @@
 		this.maxStack 			= 64;
 		this.toolTypeRequired 	= ToolType.PICKAXE;
 		this.miningLevel 		= MiningLevel.WOOD;
+		this.dropsItself 		= false;
 	}
 }
