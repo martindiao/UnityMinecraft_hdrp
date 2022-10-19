@@ -42,8 +42,9 @@ public class TerrainGenerator : MonoBehaviour
 	void Start()
 	{
 		this.noise = new FastNoise();
-		this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
-		//this.noise.SetSeed(UnityEngine.Random.Range(0, 9999));//USE THIS TO RANDOMIZE THE SEED
+		//this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
+		this.noise.SetSeed(UnityEngine.Random.Range(0, 999999));//USE THIS TO RANDOMIZE THE SEED
+		print(this.noise.GetSeed());
 
 		this.GenerateStartingTerrain();
 		this.previousPlayerPosition = Player.instance.GetVoxelChunk();
@@ -298,12 +299,23 @@ public class TerrainGenerator : MonoBehaviour
 		) * .3f;
 
 		float graniteFractal = this.noise.GetSimplexFractal(
+			i * 7f,
+			j * 6f,
+			k * 7f
+		) * .4f;
+
+		float graniteFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
+		float andesiteFractal = this.noise.GetValueFractal(
 			i * 8f,
 			j * 7f,
 			k * 8f
 		) * .4f;
 
-		float graniteFractalMask = this.noise.GetSimplex(
+		float andesiteFractalMask = this.noise.GetSimplex(
 			i * .45f,
 			k * .45f	
 		) * .3f;
@@ -357,8 +369,8 @@ public class TerrainGenerator : MonoBehaviour
 		if (j <= baselineStoneHeight)
 			blockType = "stone";
 		
-		if (j >= 40 && j < 173 && blockType == "air")
-			blockType = "water";
+		//if (j >= 40 && j < 173 && blockType == "air")
+		//	blockType = "water";
 
 		//if (j <= baselineStoneHeight)
 		//	blockType = "limestone";
@@ -374,6 +386,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (dioriteFractal > Mathf.Max(.2f, dioriteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre")
 			blockType = "diorite";
+
+		if (andesiteFractal > Mathf.Max(.2f, andesiteFractalMask) && j <= baselineCaveHeight)
+			blockType = "andesite";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";

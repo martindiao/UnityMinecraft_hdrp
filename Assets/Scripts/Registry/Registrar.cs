@@ -46,6 +46,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Snow>("snow");
 		Registry.RegisterItem<Granite>("granite");
 		Registry.RegisterItem<Diorite>("diorite");
+		Registry.RegisterItem<Andesite>("andesite");
 	}
 
 	void RegisterItems()

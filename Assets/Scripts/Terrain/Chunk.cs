@@ -146,12 +146,14 @@ public class Chunk
 					if (this.blocks[i,j,k] == null || this.blocks[i,j,k].blockName == "air")
 						continue;
 					/*if (this.blocks[i,j,k].blockName == "glass")
+					{
 						this.AddFace(i, j, k, builtFaces++, "top", CubeMeshFaces.top, vertices, uvs, triangles);
 						this.AddFace(i, j, k, builtFaces++, "bottom", CubeMeshFaces.bottom, vertices, uvs, triangles);
 						this.AddFace(i, j, k, builtFaces++, "west", CubeMeshFaces.west, vertices, uvs, triangles);
 						this.AddFace(i, j, k, builtFaces++, "east", CubeMeshFaces.east, vertices, uvs, triangles);
 						this.AddFace(i, j, k, builtFaces++, "front", CubeMeshFaces.front, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.back, vertices, uvs, triangles);*/
+						this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.back, vertices, uvs, triangles);
+					}*/
 
 					// Top face adjacency
 					if (j >= 0 && j <= chunkHeight - 1)
