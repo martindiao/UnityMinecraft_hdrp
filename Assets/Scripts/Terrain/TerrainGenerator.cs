@@ -297,13 +297,24 @@ public class TerrainGenerator : MonoBehaviour
 			k * .45f	
 		) * .3f;
 
-		float graniteFractal = this.noise.GetPerlinFractal(
-			i * 10f,
-			j * 8f,
-			k * 10f
-		) * .55f;
+		float graniteFractal = this.noise.GetSimplexFractal(
+			i * 8f,
+			j * 7f,
+			k * 8f
+		) * .4f;
 
 		float graniteFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
+		float dioriteFractal = this.noise.GetPerlinFractal(
+			i * 8f,
+			j * 8f,
+			k * 8f
+		) * .6f;
+
+		float dioriteFractalMask = this.noise.GetSimplex(
 			i * .45f,
 			k * .45f	
 		) * .3f;
@@ -360,6 +371,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (graniteFractal > Mathf.Max(.2f, graniteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre")
 			blockType = "granite";
+
+		if (dioriteFractal > Mathf.Max(.2f, dioriteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre")
+			blockType = "diorite";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";
