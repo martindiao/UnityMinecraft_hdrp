@@ -44,6 +44,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Sand>("sand");
 		Registry.RegisterItem<Glass>("glass");
 		Registry.RegisterItem<Snow>("snow");
+		Registry.RegisterItem<Granite>("granite");
 	}
 
 	void RegisterItems()

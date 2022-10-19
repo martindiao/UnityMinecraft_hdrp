@@ -158,8 +158,8 @@ public class Item: IInteractable
 		if (this.hasGenericMesh)
 		{
 			this.prefab = Resources.Load<GameObject>("Prefabs/GenericItem");
-			Texture2D texture = CachedResources.Load<Texture2D>(System.String.Format("Textures/Items/" + itemTextureName, this.itemName));
-			//Texture2D texture = Resources.Load<Texture2D>(System.String.Format("Textures/Items/{0}", this.itemName));
+			Texture2D texture = CachedResources.Load<Texture2D>("Textures/Items/" + itemTextureName);
+			//Texture2D texture = CachedResources.Load<Texture2D>(System.String.Format("Textures/Items/{0}", this.itemTextureName));
 			this.prefab.transform.GetChild(0).GetComponent<MeshRenderer>().sharedMaterial.mainTexture = texture;
 		}
 		else
