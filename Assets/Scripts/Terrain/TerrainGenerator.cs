@@ -299,9 +299,9 @@ public class TerrainGenerator : MonoBehaviour
 		) * .3f;
 
 		float graniteFractal = this.noise.GetSimplexFractal(
-			i * 7f,
+			i * 6f,
 			j * 6f,
-			k * 7f
+			k * 6f
 		) * .4f;
 
 		float graniteFractalMask = this.noise.GetSimplex(
@@ -311,7 +311,7 @@ public class TerrainGenerator : MonoBehaviour
 
 		float andesiteFractal = this.noise.GetValueFractal(
 			i * 8f,
-			j * 7f,
+			j * 8f,
 			k * 8f
 		) * .4f;
 
@@ -321,10 +321,10 @@ public class TerrainGenerator : MonoBehaviour
 		) * .3f;
 
 		float dioriteFractal = this.noise.GetPerlinFractal(
-			i * 8f,
-			j * 8f,
-			k * 8f
-		) * .6f;
+			i * 9f,
+			j * 9f,
+			k * 9f
+		) * .7f;
 
 		float dioriteFractalMask = this.noise.GetSimplex(
 			i * .45f,
