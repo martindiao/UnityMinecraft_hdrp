@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler
+public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
 	/// <summary>
 	/// Describes the index of this item slot.
@@ -100,6 +100,14 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler
 		this.inventoryContainer.UpdateGUI();
 		this.inventoryContainer.TriggerItemsChangedEvent();
 	}
+	public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log(itemName);
+    }
+	public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("The cursor exited the slot.");
+    }
 
 	private void OnRightMouseButtonClick()
 	{
