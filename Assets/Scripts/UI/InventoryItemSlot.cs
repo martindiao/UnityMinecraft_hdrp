@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -14,6 +15,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 	/// The name of the item.
 	/// </summary>
 	public string itemName;
+	bool tagFollow;
 
 	/// <summary>
 	/// The type of inventory slot.
@@ -25,6 +27,19 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 	/// The inventory container.
 	/// </summary>
 	private InventoryContainer inventoryContainer;
+
+	public GameObject itemTag;
+
+	private void Start() {
+		itemTag = GameObject.FindGameObjectWithTag("itemTag");
+	}
+
+	//private void Update() {
+	//	if (tagFollow)
+	//	{
+	//		itemTag.transform.position = Input.mousePosition;
+	//	}
+	//}
 
 	/// <summary>
 	/// This method gets called for both source and target slot.
@@ -38,11 +53,16 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 			return;
 			
 		// pointerId: -1 indicates the left mouse button was pressed.
-		if (data.pointerId == -1)
+		if (data.pointerId == -1 && !Input.GetKey(KeyCode.LeftShift))
 			this.OnLeftMouseButtonClick();
 
 		if (data.pointerId == -2)
 			this.OnRightMouseButtonClick();
+		
+		if (data.pointerId == -1 && Input.GetKey(KeyCode.LeftShift))
+		{
+			this.OnShiftLeftMouseButtonClick();
+		}
 	}
 
 	private void OnLeftMouseButtonClick()
@@ -100,13 +120,28 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 		this.inventoryContainer.UpdateGUI();
 		this.inventoryContainer.TriggerItemsChangedEvent();
 	}
+	private void OnShiftLeftMouseButtonClick()
+	{
+		//instantly transport the item from where you clicked to you inventory
+	}
 	public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(itemName);
+		if (itemName != null)
+		{
+			itemTag.transform.Find("image").GetComponentInChildren<Text>().text = itemName;
+	        itemTag.transform.Find("image").GetComponent<Image>().enabled = true;
+			itemTag.transform.Find("image").GetComponentInChildren<Text>().enabled = true;
+			tagFollow = true;
+		}
     }
 	public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("The cursor exited the slot.");
+		if (itemName != null)
+		{
+        	itemTag.transform.Find("image").GetComponent<Image>().enabled = false;
+			itemTag.transform.Find("image").GetComponentInChildren<Text>().enabled = false;
+			tagFollow = false;
+		}
     }
 
 	private void OnRightMouseButtonClick()
