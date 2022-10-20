@@ -47,6 +47,8 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Granite>("granite");
 		Registry.RegisterItem<Diorite>("diorite");
 		Registry.RegisterItem<Andesite>("andesite");
+		Registry.RegisterItem<Deepslate>("deepslate");
+		Registry.RegisterItem<Cobbledeepslate>("cobbledeepslate");
 	}
 
 	void RegisterItems()
