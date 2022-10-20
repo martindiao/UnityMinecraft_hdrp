@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3190377292681746165}
   - component: {fileID: 6253109267832456326}
   - component: {fileID: 3889809822268336664}
+  - component: {fileID: 1836295039744293173}
   m_Layer: 0
   m_Name: Quad Back
   m_TagString: Untagged
@@ -96,6 +97,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1836295039744293173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019392315637874460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4a473ab8bc1e042a93f1c7a0396c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMat: {fileID: 2100000, guid: 592b3a39c034c024a965a72ec5089661, type: 2}
+  alphaTheshold: 0
+  depth: 0.0625
 --- !u!1 &2062180803317362503
 GameObject:
   m_ObjectHideFlags: 0
