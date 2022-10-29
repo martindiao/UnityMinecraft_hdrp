@@ -265,6 +265,11 @@ public class TerrainGenerator : MonoBehaviour
 			k * .2f
 		);
 
+		float deepslateSimplex1 = this.noise.GetSimplex(
+			i * 20f,
+			k * 20f
+		) * 3;//makes the stone humps more defined
+
 		float caveFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the cave gets on the x axis
 			j * 3f,//the smaller the number, the longer the cave gets on the y axis
@@ -344,6 +349,7 @@ public class TerrainGenerator : MonoBehaviour
 
 		float baselineLandHeight 	= Chunk.chunkHeight * 0.5f + landSimplex1 + landSimplex2;
 		float baselineStoneHeight 	= Chunk.chunkHeight * 0.47f + stoneSimplex1 + stoneSimplex1;
+		float baselineDeepslateHeight = Chunk.chunkHeight * 0.47f + deepslateSimplex1 + deepslateSimplex1;
 		float baselineCaveHeight 	= Chunk.chunkHeight * 0.48f;
 
 		string blockType = "air";
@@ -368,6 +374,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (j <= baselineStoneHeight)
 			blockType = "stone";
+
+		if (j <= baselineDeepslateHeight - 90)
+			blockType = "deepslate";
 		
 		//if (j >= 40 && j < 173 && blockType == "air")
 		//	blockType = "water";
@@ -375,19 +384,19 @@ public class TerrainGenerator : MonoBehaviour
 		//if (j <= baselineStoneHeight)
 		//	blockType = "limestone";
 
-		if (limestoneFractal > Mathf.Max(.2f, limestoneFractalMask) && j <= baselineCaveHeight && blockType != "air")
+		if (limestoneFractal > Mathf.Max(.2f, limestoneFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate")
 			blockType = "rockLimestone";
 
 		if (saltpeterFractal > Mathf.Max(.2f, saltpeterFractalMask) && j <= baselineCaveHeight && blockType == "rockLimestone" && blockType != "air")
 			blockType = "saltpeterOre";
 
-		if (graniteFractal > Mathf.Max(.2f, graniteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air")
+		if (graniteFractal > Mathf.Max(.2f, graniteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air" && blockType != "deepslate")
 			blockType = "granite";
 
-		if (dioriteFractal > Mathf.Max(.2f, dioriteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air")
+		if (dioriteFractal > Mathf.Max(.2f, dioriteFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air" && blockType != "deepslate")
 			blockType = "diorite";
 
-		if (andesiteFractal > Mathf.Max(.2f, andesiteFractalMask) && j <= baselineCaveHeight && blockType != "air")
+		if (andesiteFractal > Mathf.Max(.2f, andesiteFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate")
 			blockType = "andesite";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
