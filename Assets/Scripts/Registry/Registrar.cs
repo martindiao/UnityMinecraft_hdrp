@@ -49,6 +49,7 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Andesite>("andesite");
 		Registry.RegisterItem<Deepslate>("deepslate");
 		Registry.RegisterItem<Cobbledeepslate>("cobbledeepslate");
+		Registry.RegisterItem<Tuff>("tuff");
 	}
 
 	void RegisterItems()

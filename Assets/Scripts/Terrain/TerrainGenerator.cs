@@ -336,6 +336,17 @@ public class TerrainGenerator : MonoBehaviour
 			k * .45f	
 		) * .3f;
 
+		float tuffFractal = this.noise.GetPerlinFractal(
+			i * 9f,
+			j * 9f,
+			k * 9f
+		) * 1.5f;
+
+		float tuffFractalMask = this.noise.GetSimplex(
+			i * .45f,
+			k * .45f	
+		) * .3f;
+
 		float landHoleFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the things gets on the x axis
 			j * 3f,//the smaller the number, the longer the things gets on the y axis
@@ -398,6 +409,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (andesiteFractal > Mathf.Max(.2f, andesiteFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate")
 			blockType = "andesite";
+
+		if (andesiteFractal > Mathf.Max(.2f, andesiteFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType == "deepslate")
+			blockType = "tuff";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";

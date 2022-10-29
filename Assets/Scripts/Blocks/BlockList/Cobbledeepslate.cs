@@ -11,5 +11,6 @@ public class Cobbledeepslate: Block
 		this.smeltable 			= true;
 		this.smeltedResult		= new CraftingResult("deepslate", 1);
 		this.toolTypeRequired 	= ToolType.PICKAXE;
+		this.dropsItself = true;
 	}
 }
