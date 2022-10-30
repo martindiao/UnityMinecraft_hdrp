@@ -50,6 +50,12 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Deepslate>("deepslate");
 		Registry.RegisterItem<Cobbledeepslate>("cobbledeepslate");
 		Registry.RegisterItem<Tuff>("tuff");
+		Registry.RegisterItem<OreDiamondDeepslate>("deepslateDiamondOre");
+		Registry.RegisterItem<OreIronDeepslate>("deepslateIronOre");
+		Registry.RegisterItem<OreEmeraldDeepslate>("deepslateEmeraldOre");
+		Registry.RegisterItem<OreGoldDeepslate>("deepslateGoldOre");
+		Registry.RegisterItem<OreRedstoneDeepslate>("deepslateRedstoneOre");
+		Registry.RegisterItem<OreCoalDeepslate>("deepslateCoalOre");
 	}
 
 	void RegisterItems()

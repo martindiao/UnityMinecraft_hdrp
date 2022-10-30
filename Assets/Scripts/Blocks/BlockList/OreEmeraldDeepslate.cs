@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-public class OreEmerald: Block
+public class OreEmeraldDeepslate: Block
 {
-    public OreEmerald(): base()
+    public OreEmeraldDeepslate(): base()
 	{
-		this.blockName 			= "oreEmerald";
-		this.textureName 		= "emerald_ore";
+		this.blockName 			= "deepslateEmeraldOre";
+		this.textureName 		= "deepslate_emerald_ore";
 		this.hardness 			= 2 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;

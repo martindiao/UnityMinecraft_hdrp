@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-public class OreRedstone: Block
+public class OreRedstoneDeepslate: Block
 {
-    public OreRedstone(): base()
+    public OreRedstoneDeepslate(): base()
 	{
-		this.blockName 			= "oreRedstone";
-		this.textureName 		= "redstone_ore";
+		this.blockName 			= "deepslateRedstoneOre";
+		this.textureName 		= "deepslate_redstone_ore";
 		this.hardness 			= 1 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
