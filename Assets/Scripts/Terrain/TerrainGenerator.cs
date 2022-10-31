@@ -322,6 +322,12 @@ public class TerrainGenerator : MonoBehaviour
 			k * 9f
 		) * 1.5f;
 
+		float coalFractal = this.noise.GetSimplexFractal(
+			i * 11f,
+			j * 11f,
+			k * 11f
+		) * .5f;
+
 		float landHoleFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the things gets on the x axis
 			j * 3f,//the smaller the number, the longer the things gets on the y axis
@@ -384,6 +390,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (andesiteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType == "deepslate" && blockType != "dirt" && blockType != "grass")
 			blockType = "tuff";
+
+		if (coalFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+			blockType = "oreCoal";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";
@@ -486,8 +495,8 @@ public class TerrainGenerator : MonoBehaviour
 		//if (probability <= 7)
 		//	blockName = "saltpeterOre";
 		
-		if (probability <= 6)
-			blockName = "oreCoal";
+		//if (probability <= 6)
+		//	blockName = "oreCoal";
 
 		//if (probability <= 6)
 		//	blockName = "clay"; //tis a misery, but it can't spawn cause i'm running out of probability numbers (biomes will help a lot)
