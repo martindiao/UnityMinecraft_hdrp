@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 1658937233}
   - component: {fileID: 1658937229}
   m_Layer: 0
-  m_Name: worm
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
