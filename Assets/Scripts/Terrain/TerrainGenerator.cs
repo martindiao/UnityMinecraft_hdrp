@@ -304,35 +304,35 @@ public class TerrainGenerator : MonoBehaviour
 			k * 6f
 		) * .4f;
 
-		float andesiteFractal = this.noise.GetValueFractal(
+		float andesiteFractal = this.noise.GetSimplexFractal(
 			i * 8f,
 			j * 8f,
 			k * 8f
 		) * .4f;
 
-		float dioriteFractal = this.noise.GetPerlinFractal(
+		float dioriteFractal = this.noise.GetCellular(
 			i * 9f,
 			j * 9f,
 			k * 9f
-		) * .7f;
+		) * .5f;
 
-		float tuffFractal = this.noise.GetPerlinFractal(
-			i * 9f,
-			j * 9f,
-			k * 9f
-		) * 1.5f;
+		float tuffFractal = this.noise.GetSimplexFractal(
+			i * 8f,
+			j * 8f,
+			k * 8f
+		) * 1.3f;
 
 		float coalFractal = this.noise.GetSimplexFractal(
 			i * 12f,
 			j * 12f,
 			k * 12f
-		) * .4f;
+		) * .37f;
 
 		float ironFractal = this.noise.GetSimplexFractal(
 			i * 11f,
 			j * 11f,
 			k * 11f
-		) * .4f;
+		) * .37f;
 
 		float landHoleFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the things gets on the x axis
@@ -397,10 +397,10 @@ public class TerrainGenerator : MonoBehaviour
 		if (andesiteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType == "deepslate" && blockType != "dirt" && blockType != "grass")
 			blockType = "tuff";
 
-		if (coalFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+		if (coalFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass" && blockType != "tuff")
 			blockType = "oreCoal";
 
-		if (ironFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+		if (ironFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass" && blockType != "tuff")
 			blockType = "oreIron";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
