@@ -323,10 +323,16 @@ public class TerrainGenerator : MonoBehaviour
 		) * 1.5f;
 
 		float coalFractal = this.noise.GetSimplexFractal(
+			i * 12f,
+			j * 12f,
+			k * 12f
+		) * .4f;
+
+		float ironFractal = this.noise.GetSimplexFractal(
 			i * 11f,
 			j * 11f,
 			k * 11f
-		) * .5f;
+		) * .4f;
 
 		float landHoleFractal = this.noise.GetPerlinFractal(
 			i * 5f,//the smaller the number, the longer the things gets on the x axis
@@ -379,10 +385,10 @@ public class TerrainGenerator : MonoBehaviour
 		if (saltpeterFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType == "rockLimestone" && blockType != "air")
 			blockType = "saltpeterOre";
 
-		if (graniteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+		if (graniteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
 			blockType = "granite";
 
-		if (dioriteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "rockLimestone" && blockType != "saltpeterOre" && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+		if (dioriteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
 			blockType = "diorite";
 
 		if (andesiteFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
@@ -393,6 +399,9 @@ public class TerrainGenerator : MonoBehaviour
 
 		if (coalFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
 			blockType = "oreCoal";
+
+		if (ironFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass")
+			blockType = "oreIron";
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";
@@ -501,8 +510,8 @@ public class TerrainGenerator : MonoBehaviour
 		//if (probability <= 6)
 		//	blockName = "clay"; //tis a misery, but it can't spawn cause i'm running out of probability numbers (biomes will help a lot)
 
-		if (probability <= 5 && y > 25 && y < 150)
-			blockName = "oreIron";
+		//if (probability <= 5 && y > 25 && y < 150)
+		//	blockName = "oreIron";
 
 		if (probability <= 3 && y <= 85)
 			blockName = "oreGold";
