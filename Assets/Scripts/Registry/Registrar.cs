@@ -92,6 +92,15 @@ public class Registrar : MonoBehaviour
 
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
+				{"gunpowder", "sand", "gunpowder"},
+				{"sand", "gunpowder", "sand"},
+				{"gunpowder", "sand", "gunpowder"}
+			}, 
+			new CraftingResult("tnt", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
 				{"coal", null, null},
 				{"stick", null, null},
 				{null, null, null}
