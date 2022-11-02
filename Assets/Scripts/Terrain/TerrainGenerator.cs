@@ -403,8 +403,17 @@ public class TerrainGenerator : MonoBehaviour
 		if (coalFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineDeepslateHeight - 90 && j >= baselineDeepslateHeight - 95 && blockType != "air" && blockType != "dirt" && blockType != "grass")
 			blockType = "deepslateCoalOre";
 
-		if (ironFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "deepslate" && blockType != "dirt" && blockType != "grass" && blockType != "tuff")
-			blockType = "oreIron";
+		if (ironFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineCaveHeight && blockType != "air" && blockType != "dirt" && blockType != "grass")
+		{
+			if (blockType != "deepslate" && blockType != "tuff")
+			{
+				blockType = "oreIron";
+			}
+			else if (blockType == "deepslate" || blockType == "tuff")
+			{
+				blockType = "deepslateIronOre";
+			}
+		}
 
 		if (caveFractal > Mathf.Max(.2f, caveFractalMask) && j <= baselineCaveHeight)
 			blockType = "air";
