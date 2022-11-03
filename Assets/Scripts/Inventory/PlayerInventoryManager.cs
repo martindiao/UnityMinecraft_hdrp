@@ -32,7 +32,7 @@ public static class PlayerInventoryManager
 			bool hitOtherItem;
 			Vector4? placement 		= GetPlacementCoordinates(out hitOtherItem);
 
-			if ((placement == null || placement.Value.w == 0) && item.placeableOnlyOnTop)
+			if ((placement == null || placement.Value.w == 0) && item.placeableOnlyOnTop)//change value.w == 0 to value.w == 1 to make it only placable on the sides of a block
 				return false;
 
 			if (placement.Value.w == 1 && !item.placeableOnOtherItems && hitOtherItem)
