@@ -109,8 +109,8 @@ public class TerrainGenerator : MonoBehaviour
 		ChunkPosition playerChunkPos = Player.instance.GetVoxelChunk();
 		int halvedChunkSize = chunkMatrixSize / 2;
 
-		for (int _i = playerChunkPos.x - halvedChunkSize; _i < playerChunkPos.x + halvedChunkSize; _i++)
-			for (int _k = playerChunkPos.z - halvedChunkSize; _k < playerChunkPos.z + halvedChunkSize; _k++)
+		for (int _i = playerChunkPos.x - halvedChunkSize; _i < playerChunkPos.x + halvedChunkSize; _i++)//add *3 to the end of all the halvedChunkSize to make the starting terrain really big and also make the game take ages to load.
+			for (int _k = playerChunkPos.z - halvedChunkSize; _k < playerChunkPos.z + halvedChunkSize; _k++)//add *3 to the end of all the halvedChunkSize to make the starting terrain really big and also make the game take ages to load.
 			{
 				Chunk chunk = new Chunk();
 				chunk.x = _i;
