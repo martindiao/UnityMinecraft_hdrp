@@ -145,45 +145,36 @@ public class Chunk
 					// If the block itself is air, don't render anything
 					if (this.blocks[i,j,k] == null || this.blocks[i,j,k].blockName == "air")
 						continue;
-					/*if (this.blocks[i,j,k].blockName == "glass")
-					{
-						this.AddFace(i, j, k, builtFaces++, "top", CubeMeshFaces.top, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "bottom", CubeMeshFaces.bottom, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "west", CubeMeshFaces.west, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "east", CubeMeshFaces.east, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "front", CubeMeshFaces.front, vertices, uvs, triangles);
-						this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.back, vertices, uvs, triangles);
-					}*/
 
 					// Top face adjacency
 					if (j >= 0 && j <= chunkHeight - 1)
-						if (j == chunkHeight - 1 || this.blocks[i, j + 1, k]?.blockName == "air")
+						if (j == chunkHeight - 1 || this.blocks[i, j + 1, k]?.blockName == "air" || this.blocks[i, j + 1, k]?.blockName == "leaves" || this.blocks[i, j + 1, k]?.blockName == "glass")
 							// Always render the top most face, OR if the top-adjacent block is "air".
 							this.AddFace(i, j, k, builtFaces++, "top", CubeMeshFaces.top, vertices, uvs, triangles);
 
 					// Bottom face adjacency
 					if (j >= 0 && j < chunkHeight)
-						if (j == 0 || this.blocks[i, j - 1, k]?.blockName == "air")
+						if (j == 0 || this.blocks[i, j - 1, k]?.blockName == "air" || this.blocks[i, j - 1, k]?.blockName == "leaves" || this.blocks[i, j - 1, k]?.blockName == "glass")
 							this.AddFace(i, j, k, builtFaces++, "bottom", CubeMeshFaces.bottom, vertices, uvs, triangles);
 					
 					// West face adjacency
 					if (i >= 0 && i < chunkSize)
-						if (i == 0 || this.blocks[i - 1, j, k]?.blockName == "air")
+						if (i == 0 || this.blocks[i - 1, j, k]?.blockName == "air" || this.blocks[i - 1, j, k]?.blockName == "leaves" || this.blocks[i - 1, j, k]?.blockName == "glass")
 							this.AddFace(i, j, k, builtFaces++, "west", CubeMeshFaces.west, vertices, uvs, triangles);
 
 					// East face adjacency
 					if (i >= 0 && i <= chunkSize)
-						if (i == chunkSize - 1 || this.blocks[i + 1, j, k]?.blockName == "air")
+						if (i == chunkSize - 1 || this.blocks[i + 1, j, k]?.blockName == "air" || this.blocks[i + 1, j, k]?.blockName == "leaves" || this.blocks[i + 1, j, k]?.blockName == "glass")
 							this.AddFace(i, j, k, builtFaces++, "east", CubeMeshFaces.east, vertices, uvs, triangles);
 
 					// Front face adjacency
 					if (k >= 0 && k < chunkSize)
-						if (k == 0 || this.blocks[i, j, k - 1]?.blockName == "air")
+						if (k == 0 || this.blocks[i, j, k - 1]?.blockName == "air" || this.blocks[i, j, k - 1]?.blockName == "leaves" || this.blocks[i, j, k - 1]?.blockName == "glass")
 							this.AddFace(i, j, k, builtFaces++, "front", CubeMeshFaces.front, vertices, uvs, triangles);
 
 					// Back face adjacency
 					if (k >= 0 && k <= chunkSize)
-						if (k == chunkSize - 1 || this.blocks[i, j, k + 1]?.blockName == "air")
+						if (k == chunkSize - 1 || this.blocks[i, j, k + 1]?.blockName == "air" || this.blocks[i, j, k + 1]?.blockName == "leaves" || this.blocks[i, j, k + 1]?.blockName == "glass")
 							this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.back, vertices, uvs, triangles);
 				}
 	}
