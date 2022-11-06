@@ -46,7 +46,7 @@ public class Controller : MonoBehaviour
 
 			RenderSettings.fog = false;
 
-			GameObject.FindObjectOfType<Light>().shadows = LightShadows.Soft;
+			GameObject.FindObjectOfType<Light>().shadows = LightShadows.None;
 
 			player.GetComponentInChildren<Camera>().backgroundColor = playercamBackgroundColor2;
 		}
