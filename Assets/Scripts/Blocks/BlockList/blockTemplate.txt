@@ -1,0 +1,12 @@
+﻿public class blockTemplate: Block
+{
+    public constructor(): base()
+	{
+		this.blockName 			= "BLOCK_NAME";
+		this.textureName 		= "TEXTURE_NAME";
+		this.hardness 			= 1 * 20;
+		this.hasSidedTextures 	= true;
+		this.burnable 			= false;
+		this.soundType			= BlockSoundType.WOOD;
+	}
+}
