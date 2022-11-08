@@ -15,7 +15,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 	/// The name of the item.
 	/// </summary>
 	public string itemName;
-	bool tagFollow;
+	//bool tagFollow;
 
 	/// <summary>
 	/// The type of inventory slot.
@@ -131,7 +131,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 			itemTag.transform.Find("image").GetComponentInChildren<Text>().text = itemName;
 	        itemTag.transform.Find("image").GetComponent<Image>().enabled = true;
 			itemTag.transform.Find("image").GetComponentInChildren<Text>().enabled = true;
-			tagFollow = true;
+			//tagFollow = true;
 		}
     }
 	public void OnPointerExit(PointerEventData eventData)
@@ -140,7 +140,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 		{
         	itemTag.transform.Find("image").GetComponent<Image>().enabled = false;
 			itemTag.transform.Find("image").GetComponentInChildren<Text>().enabled = false;
-			tagFollow = false;
+			//tagFollow = false;
 		}
     }
 

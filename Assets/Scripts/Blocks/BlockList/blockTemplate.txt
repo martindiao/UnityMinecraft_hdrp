@@ -4,9 +4,16 @@
 	{
 		this.blockName 			= "BLOCK_NAME";
 		this.textureName 		= "TEXTURE_NAME";
-		this.hardness 			= 1 * 20;
-		this.hasSidedTextures 	= true;
-		this.burnable 			= false;
-		this.soundType			= BlockSoundType.WOOD;
+		this.hardness 			= HARDNESS;
+		this.hasSidedTextures 	= HASSIDEDTEXTURES;
+		this.burnable 			= BURNABLE;
+		this.burnTime			= BURN_TIME;
+		this.soundType			= BlockSoundType.SOUND_TYPE;
+		this.breakable			= BREAKABLE;
+		this.placeable			= PLACEABLE;
+		this.miningLevel 		= MiningLevel.MININGLEVEL;
+		this.toolTypeRequired 	= ToolType.TOOLTYPE;
+		this.smeltable 			= SMELTABLE;
+		this.smeltedResult		= new CraftingResult("SMELTED_RESULT", RESULTAMT);
 	}
 }
