@@ -31,9 +31,9 @@ public class BlockCreator : EditorWindow
     void OnGUI() {
         GUILayout.Label("Block name:");
         blockName = GUILayout.TextField(blockName);
-        hasSidedTextures = EditorGUILayout.Toggle("Has different textures for the sides:", hasSidedTextures);
+        hasSidedTextures = EditorGUILayout.Toggle("Has sided textures:", hasSidedTextures);
         breakable = EditorGUILayout.Toggle("Breakable:", breakable);
-        breakable = EditorGUILayout.Toggle("Placeable:", placeable);
+        placeable = EditorGUILayout.Toggle("Placeable:", placeable);
         burnable = EditorGUILayout.Toggle("Burnable:", burnable);
         if (burnable)
         {
