@@ -15,5 +15,10 @@
 		this.toolTypeRequired 	= ToolType.TOOLTYPE;
 		this.smeltable 			= SMELTABLE;
 		this.smeltedResult		= new CraftingResult("SMELTED_RESULT", RESULTAMT);
+		this.dropsItself		= DROPS_ITSELF;
+		this.maxStack			= MAX_STACK;
+
+		this.drops = new List<Drop>();
+		this.drops.Add(new Drop("DROP", DROPAMT, 1.0f));
 	}
 }

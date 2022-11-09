@@ -9,6 +9,7 @@ public class BlockCreator : EditorWindow
     public string blockName;
     public string blockTexture = null;
     public string className;
+    public string drop;
     public float hardness;
     public bool hasSidedTextures;
     public bool burnable;
@@ -17,7 +18,10 @@ public class BlockCreator : EditorWindow
     public bool smeltable;
     public string smeltedResult;
     public int smeltedResultAmt;
+    public int maxStack = 64;
+    public int dropAmt = 1;
     public bool placeable = true;
+    public bool dropsItself = true;
     public BlockSoundType blockSoundType;
     public MiningLevel miningLevel;
     public ToolType toolType;
@@ -34,6 +38,13 @@ public class BlockCreator : EditorWindow
         hasSidedTextures = EditorGUILayout.Toggle("Has sided textures:", hasSidedTextures);
         breakable = EditorGUILayout.Toggle("Breakable:", breakable);
         placeable = EditorGUILayout.Toggle("Placeable:", placeable);
+        dropsItself = EditorGUILayout.Toggle("Drops itself:", dropsItself);
+        if (dropsItself != true)
+        {
+            GUILayout.Label("Item to drop:");
+            drop = GUILayout.TextField(drop);
+            dropAmt = EditorGUILayout.IntField("Dropped item amount:", dropAmt);
+        }
         burnable = EditorGUILayout.Toggle("Burnable:", burnable);
         if (burnable)
         {
@@ -44,8 +55,9 @@ public class BlockCreator : EditorWindow
         {
             GUILayout.Label("Smelted result:");
             smeltedResult = GUILayout.TextField(smeltedResult);
-            smeltedResultAmt = EditorGUILayout.IntField("Amount of smelted result:", smeltedResultAmt);
+            smeltedResultAmt = EditorGUILayout.IntField("Smelted result amount:", smeltedResultAmt);
         }
+        maxStack = EditorGUILayout.IntField("Max stack:", maxStack);
         hardness = EditorGUILayout.FloatField("Hardness:", hardness);
         miningLevel = (MiningLevel)EditorGUILayout.EnumPopup("Mining level:", miningLevel);
         toolType = (ToolType)EditorGUILayout.EnumPopup("Tool required:", toolType);
@@ -83,9 +95,13 @@ public class BlockCreator : EditorWindow
             contents = contents.Replace("BREAKABLE", breakable.ToString().Substring(0, 1).ToLower() + breakable.ToString().Substring(1).ToLower());
             contents = contents.Replace("PLACEABLE", placeable.ToString().Substring(0, 1).ToLower() + placeable.ToString().Substring(1).ToLower());
             contents = contents.Replace("SMELTABLE", smeltable.ToString().Substring(0, 1).ToLower() + smeltable.ToString().Substring(1).ToLower());
+            contents = contents.Replace("DROPS_ITSELF", dropsItself.ToString().Substring(0, 1).ToLower() + dropsItself.ToString().Substring(1).ToLower());
             contents = contents.Replace("TOOLTYPE", toolType.ToString());
             contents = contents.Replace("SMELTED_RESULT", smeltedResult);
             contents = contents.Replace("RESULTAMT", smeltedResultAmt.ToString());
+            contents = contents.Replace("MAX_STACK", maxStack.ToString());
+            contents = contents.Replace("DROP", drop);
+            contents = contents.Replace("DROPAMT", dropAmt.ToString());
             Debug.Log(contents);
         }
         using(StreamWriter sw = new StreamWriter(string.Format(Application.dataPath + "/Scripts/Blocks/BlockList/{0}.cs", new object[] { className.Replace(" ", "") }))) {
