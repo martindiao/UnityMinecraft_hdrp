@@ -33,29 +33,32 @@ public class BlockCreator : EditorWindow
         GetWindow<BlockCreator>("Block Creator");
     }
     void OnGUI() {
-        GUILayout.Label("Block name:");
-        blockName = GUILayout.TextField(blockName);
+        blockName = EditorGUILayout.TextField("Block name:", blockName);
         hasSidedTextures = EditorGUILayout.Toggle("Has sided textures:", hasSidedTextures);
         breakable = EditorGUILayout.Toggle("Breakable:", breakable);
         placeable = EditorGUILayout.Toggle("Placeable:", placeable);
         dropsItself = EditorGUILayout.Toggle("Drops itself:", dropsItself);
         if (dropsItself != true)
         {
-            GUILayout.Label("Item to drop:");
-            drop = GUILayout.TextField(drop);
+            EditorGUI.indentLevel++;
+            drop = EditorGUILayout.TextField("Item to drop:", drop);
             dropAmt = EditorGUILayout.IntField("Dropped item amount:", dropAmt);
+            EditorGUI.indentLevel--;
         }
         burnable = EditorGUILayout.Toggle("Burnable:", burnable);
         if (burnable)
         {
+            EditorGUI.indentLevel++;
             burnTime = EditorGUILayout.FloatField("Burn time:", burnTime);
+            EditorGUI.indentLevel--;
         }
         smeltable = EditorGUILayout.Toggle("Smeltable:", smeltable);
         if (smeltable)
         {
-            GUILayout.Label("Smelted result:");
-            smeltedResult = GUILayout.TextField(smeltedResult);
+            EditorGUI.indentLevel++;
+            smeltedResult = EditorGUILayout.TextField("Smelted result:", smeltedResult);
             smeltedResultAmt = EditorGUILayout.IntField("Smelted result amount:", smeltedResultAmt);
+            EditorGUI.indentLevel--;
         }
         maxStack = EditorGUILayout.IntField("Max stack:", maxStack);
         hardness = EditorGUILayout.FloatField("Hardness:", hardness);
