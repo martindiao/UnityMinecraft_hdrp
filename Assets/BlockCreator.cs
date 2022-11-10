@@ -22,6 +22,7 @@ public class BlockCreator : EditorWindow
     public int dropAmt = 1;
     public bool placeable = true;
     public bool dropsItself = true;
+    public bool anyToolRequired = true;
     public BlockSoundType blockSoundType;
     public MiningLevel miningLevel;
     public ToolType toolType;
@@ -37,6 +38,13 @@ public class BlockCreator : EditorWindow
         hasSidedTextures = EditorGUILayout.Toggle("Has sided textures:", hasSidedTextures);
         breakable = EditorGUILayout.Toggle("Breakable:", breakable);
         placeable = EditorGUILayout.Toggle("Placeable:", placeable);
+        anyToolRequired = EditorGUILayout.Toggle("Any tool required:", anyToolRequired);
+        if (!anyToolRequired)
+        {
+            EditorGUI.indentLevel++;
+            toolType = (ToolType)EditorGUILayout.EnumPopup("Tool required:", toolType);
+            EditorGUI.indentLevel--;
+        }
         dropsItself = EditorGUILayout.Toggle("Drops itself:", dropsItself);
         if (dropsItself != true)
         {
@@ -63,7 +71,6 @@ public class BlockCreator : EditorWindow
         maxStack = EditorGUILayout.IntField("Max stack:", maxStack);
         hardness = EditorGUILayout.FloatField("Hardness:", hardness);
         miningLevel = (MiningLevel)EditorGUILayout.EnumPopup("Mining level:", miningLevel);
-        toolType = (ToolType)EditorGUILayout.EnumPopup("Tool required:", toolType);
         blockSoundType = (BlockSoundType)EditorGUILayout.EnumPopup("Block sound type:", blockSoundType);
         texture = (Texture2D)EditorGUILayout.ObjectField("Block texture:", texture, typeof(Texture2D), false);
         if (blockName != null)
@@ -99,6 +106,7 @@ public class BlockCreator : EditorWindow
             contents = contents.Replace("PLACEABLE", placeable.ToString().Substring(0, 1).ToLower() + placeable.ToString().Substring(1).ToLower());
             contents = contents.Replace("SMELTABLE", smeltable.ToString().Substring(0, 1).ToLower() + smeltable.ToString().Substring(1).ToLower());
             contents = contents.Replace("DROPS_ITSELF", dropsItself.ToString().Substring(0, 1).ToLower() + dropsItself.ToString().Substring(1).ToLower());
+            contents = contents.Replace("ANYTOOL", anyToolRequired.ToString().Substring(0, 1).ToLower() + anyToolRequired.ToString().Substring(1).ToLower());
             contents = contents.Replace("TOOLTYPE", toolType.ToString());
             contents = contents.Replace("SMELTED_RESULT", smeltedResult);
             contents = contents.Replace("RESULTAMT", smeltedResultAmt.ToString());
