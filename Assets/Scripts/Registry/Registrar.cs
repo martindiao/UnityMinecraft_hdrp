@@ -12,7 +12,6 @@ public class Registrar : MonoBehaviour
 
 	void RegisterBlocks()
 	{
-		
 		Registry.RegisterItem<Air>("air");
         Registry.RegisterItem<Cobblestone>("cobblestone");
 		Registry.RegisterItem<Stone>("stone");
