@@ -1,4 +1,9 @@
-﻿public class blockTemplate: Block
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class blockTemplate: Block
 {
     public constructor(): base()
 	{
@@ -20,6 +25,6 @@
 		this.anyToolRequired	= ANYTOOL;
 
 		this.drops = new List<Drop>();
-		this.drops.Add(new Drop("DROP", DROPAMT, 1.0f));
+		this.drops.Add(new Drop("DROP", AMOUNT, 1.0f));
 	}
 }

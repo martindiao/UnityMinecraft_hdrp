@@ -10,7 +10,7 @@ public class BlockCreator : EditorWindow
     public string blockTexture = null;
     public string className;
     public string drop;
-    public float hardness;
+    public int hardness;
     public bool hasSidedTextures;
     public bool burnable;
     public float burnTime;
@@ -69,7 +69,7 @@ public class BlockCreator : EditorWindow
             EditorGUI.indentLevel--;
         }
         maxStack = EditorGUILayout.IntField("Max stack:", maxStack);
-        hardness = EditorGUILayout.FloatField("Hardness:", hardness);
+        hardness = EditorGUILayout.IntField("Hardness:", hardness);
         miningLevel = (MiningLevel)EditorGUILayout.EnumPopup("Mining level:", miningLevel);
         blockSoundType = (BlockSoundType)EditorGUILayout.EnumPopup("Block sound type:", blockSoundType);
         texture = (Texture2D)EditorGUILayout.ObjectField("Block texture:", texture, typeof(Texture2D), false);
@@ -112,11 +112,15 @@ public class BlockCreator : EditorWindow
             contents = contents.Replace("RESULTAMT", smeltedResultAmt.ToString());
             contents = contents.Replace("MAX_STACK", maxStack.ToString());
             contents = contents.Replace("DROP", drop);
-            contents = contents.Replace("DROPAMT", dropAmt.ToString());
+            contents = contents.Replace("AMOUNT", dropAmt.ToString());
             Debug.Log(contents);
         }
         using(StreamWriter sw = new StreamWriter(string.Format(Application.dataPath + "/Scripts/Blocks/BlockList/{0}.cs", new object[] { className.Replace(" ", "") }))) {
             sw.Write(contents);
+            //File.AppendAllText(Application.dataPath + "/Scripts/Registry/Registrar.cs", "\nRegistry.RegisterItem<" + className + ">('" + blockName + "');");
+            var lines = File.ReadAllLines(Application.dataPath + "/Scripts/Registry/Registrar.cs");
+            lines[14] = "\nRegistry.RegisterItem<" + className + ">(\"" + blockName + "\");";
+            File.WriteAllLines(Application.dataPath + "/Scripts/Registry/Registrar.cs", lines);
         }
     }
 }
