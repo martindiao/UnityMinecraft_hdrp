@@ -529,17 +529,17 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.7
+    m_Value: 2
     min: 0
     max: 4
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
     min: 0
     max: 1
   radius:
     m_OverrideState: 1
-    m_Value: 3.44
+    m_Value: 3.7
     min: 0.25
     max: 5
   spatialBilateralAggressiveness:
@@ -675,23 +675,23 @@ MonoBehaviour:
     m_Value: 150
     min: 0
   directionalTransmissionMultiplier:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 1
   cascadeShadowSplitCount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 4
     min: 1
     max: 4
   cascadeShadowSplit0:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.05
   cascadeShadowSplit1:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.15
   cascadeShadowSplit2:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.3
   cascadeShadowBorder0:
     m_OverrideState: 1
@@ -700,8 +700,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.06666666
   cascadeShadowBorder2:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   cascadeShadowBorder3:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
