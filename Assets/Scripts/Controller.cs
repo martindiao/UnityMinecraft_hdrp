@@ -18,9 +18,16 @@ public class Controller : MonoBehaviour
 
 		GameObject.Find("Player").transform.Translate(new Vector3(512, 70, 512));
 
-		//InventoryContainers.inventory.items[26] = new InventoryItem("glass");
-		//InventoryContainers.inventory.items[25] = new InventoryItem("oreIron");
+		//InventoryContainers.inventory.items[26] = new InventoryItem("woodPickaxe");
+		//InventoryContainers.inventory.items[25] = new InventoryItem("woodPickaxe");
 		//InventoryContainers.inventory.items[24] = new InventoryItem("stonePickaxe");
+		//InventoryContainers.inventory.items[23] = new InventoryItem("stonePickaxe");
+		//InventoryContainers.inventory.items[22] = new InventoryItem("diamondPickaxe");
+		//InventoryContainers.inventory.items[21] = new InventoryItem("diamondPickaxe");
+		//InventoryContainers.inventory.items[20] = new InventoryItem("ironPickaxe");
+		//InventoryContainers.inventory.items[19] = new InventoryItem("ironPickaxe");
+		//InventoryContainers.inventory.items[18] = new InventoryItem("goldPickaxe");
+		//InventoryContainers.inventory.items[17] = new InventoryItem("goldPickaxe");
 
 		MineCraftGUI.hotbar.UpdateGUI();
     }
