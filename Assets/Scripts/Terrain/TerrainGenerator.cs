@@ -316,6 +316,12 @@ public class TerrainGenerator : MonoBehaviour
 			k * 18f
 		) * .23f;
 
+		float anotherStoneFractal = this.noise.GetCellular(
+			i * 18f,
+			j * 18f,
+			k * 18f
+		) * .33f;
+
 		float tuffFractal = this.noise.GetSimplexFractal(
 			i * 8f,
 			j * 8f,
@@ -361,6 +367,8 @@ public class TerrainGenerator : MonoBehaviour
 			//if (j == Mathf.FloorToInt(baselineLandHeight) + 1)
 				//blockType = "snow";
 		}
+		if (anotherStoneFractal > Mathf.Max(.2f, oreFractalMask) && j <= baselineLandHeight + 10 && blockType != "air" && blockType != "deepslate" && blockType == "dirt" && blockType != "grass")
+				blockType = "stone";
 
 		if (j <= baselineLandHeight && biomes == Biomes.Desert)
 		{
