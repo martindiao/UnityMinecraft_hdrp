@@ -160,10 +160,17 @@ public abstract class Block: BaseBlock, IInteractable
 
 		ChunkPosition position 		= Player.instance.GetVoxelChunk();
 		Chunk chunk 				= PCTerrain.GetInstance().chunks[position];
+		InventoryItem activeItem 	= InventoryContainers.hotbar.items[PlayerInventoryManager.activeItemIndex];
+		Item itemInstance 			= activeItem?.itemInstance as Item;
 		this.PlaySound(chunk.chunkGameObject.transform, this.coordinates, true);
 
 		if (this.dropsItself)
-			Dropper.DropItem(this.blockName, this.coordinates);
+		{
+			//if (itemInstance != null && this.toolTypeRequired == itemInstance.toolType)
+			//{
+				Dropper.DropItem(this.blockName, this.coordinates);
+			//}
+		}
 
 		foreach(Drop drop in this.drops)
 			if (Random.Range(0, 101) > (1.0f - drop.probability) * 100)
@@ -174,6 +181,23 @@ public abstract class Block: BaseBlock, IInteractable
 	/// Allows the player to interact with the block.
 	/// </summary>
 	public virtual void Interact() {}
+
+	/// <summary>
+	/// The behaviour of the block
+	/// </summary>
+	public virtual void Behaviour() {
+		BaseBlock[,,] blocks = new BaseBlock[Chunk.chunkSize, Chunk.chunkHeight, Chunk.chunkSize];
+		for (int i = 0; i < Chunk.chunkSize; i++)
+		{
+			for (int j = 0; j < Chunk.chunkSize; j++)
+			{
+				for (int k = 0; k < Chunk.chunkSize; k++)
+				{
+					Debug.Log(blocks[i, j, k].blockName);
+				}
+			}
+		}
+	}
 
 	/// <summary>
 	/// Allows to place the block where the player is currently looking at.
@@ -244,7 +268,7 @@ public abstract class Block: BaseBlock, IInteractable
 		InventoryItem activeItem 	= InventoryContainers.hotbar.items[PlayerInventoryManager.activeItemIndex];
 		Item itemInstance 			= activeItem?.itemInstance as Item;
 
-		if (this.miningLevel > 0 || this.toolTypeRequired != ToolType.ANY)
+		/*if (this.miningLevel > 0 || this.toolTypeRequired != ToolType.ANY)
 		{
 			//if (itemInstance == null)
 			//	return;
@@ -254,7 +278,7 @@ public abstract class Block: BaseBlock, IInteractable
 
 			//if (itemInstance.toolType != this.toolTypeRequired)
 			//	return;
-		}
+		}*/
 			
 		if (itemInstance != null && this.toolTypeRequired == itemInstance.toolType)
 		{

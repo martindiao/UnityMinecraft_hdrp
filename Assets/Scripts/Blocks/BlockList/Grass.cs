@@ -8,7 +8,7 @@ public class Grass: Block
 		this.hardness 			= 1 * 20;
 		this.hasSidedTextures 	= true;
 		this.soundType 			= BlockSoundType.DIRT;
-		this.dropsItself = false;
+		this.dropsItself		= false;
 
 		this.drops = new List<Drop>();
 		this.drops.Add(new Drop("dirt", 1, 1.0f));
