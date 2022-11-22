@@ -6,7 +6,7 @@ public class OreEmeraldDeepslate: Block
 	{
 		this.blockName 			= "deepslateEmeraldOre";
 		this.textureName 		= "deepslate_emerald_ore";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 7 * 40;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

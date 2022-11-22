@@ -6,7 +6,7 @@ public class OreGold: Block
 	{
 		this.blockName 			= "oreGold";
 		this.textureName 		= "gold_ore";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		//this.smeltable 			= true;

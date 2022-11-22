@@ -5,7 +5,7 @@ public class LimestoneSaltpeter: Block
 	{
 		this.blockName 			= "saltpeterOre";
 		this.textureName 		= "limestone_saltpeter";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 5 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.smeltable 			= true;

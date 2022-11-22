@@ -6,7 +6,7 @@ public class OreGoldDeepslate: Block
 	{
 		this.blockName 			= "deepslateGoldOre";
 		this.textureName 		= "deepslate_gold_ore";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 7 * 40;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		//this.smeltable 			= true;

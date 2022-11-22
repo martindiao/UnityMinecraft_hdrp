@@ -4,7 +4,7 @@
 	{
 		this.blockName 			= "oreSulfur";
 		this.textureName 		= "sulfur_ore";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.smeltable 			= true;

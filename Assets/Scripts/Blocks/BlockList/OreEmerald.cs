@@ -6,7 +6,7 @@ public class OreEmerald: Block
 	{
 		this.blockName 			= "oreEmerald";
 		this.textureName 		= "emerald_ore";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

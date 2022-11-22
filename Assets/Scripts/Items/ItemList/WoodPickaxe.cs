@@ -11,7 +11,7 @@ public class WoodPickaxe: Item
 		this.placeable				= false;
 		this.miningLevel			= MiningLevel.WOOD;
 		this.toolType				= ToolType.PICKAXE;
-		this.breakingSpeedModifier	= 1.0f;
+		this.breakingSpeedModifier	= 3.5f;
 		this.maxStack				= 1;
 		this.LoadPrefab();
     }

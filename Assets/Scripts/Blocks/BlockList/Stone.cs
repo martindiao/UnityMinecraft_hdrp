@@ -5,7 +5,7 @@ public class Stone: Block
     public Stone(): base()
 	{
 		this.blockName 			= "stone";
-		this.hardness 			= 3 * 20;
+		this.hardness 			= 6 * 20;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;
 

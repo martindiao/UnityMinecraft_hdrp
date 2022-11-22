@@ -246,14 +246,14 @@ public abstract class Block: BaseBlock, IInteractable
 
 		if (this.miningLevel > 0 || this.toolTypeRequired != ToolType.ANY)
 		{
-			if (itemInstance == null)
-				return;
+			//if (itemInstance == null)
+			//	return;
 			
-			if (this.miningLevel > itemInstance.miningLevel)
-				return;
+			//if (this.miningLevel > itemInstance.miningLevel)
+			//	return;
 
-			if (itemInstance.toolType != this.toolTypeRequired)
-				return;
+			//if (itemInstance.toolType != this.toolTypeRequired)
+			//	return;
 		}
 			
 		if (itemInstance != null && this.toolTypeRequired == itemInstance.toolType)

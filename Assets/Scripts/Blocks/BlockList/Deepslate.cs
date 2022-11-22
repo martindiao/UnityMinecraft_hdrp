@@ -7,7 +7,7 @@ public class Deepslate: Block
 		this.blockName 			= "deepslate";
 		this.textureName 		= "deepslate";
 		this.hasSidedTextures 	= true;
-		this.hardness 			= 3 * 20;
+		this.hardness 			= 7 * 40;
 		this.soundType 			= BlockSoundType.STONE;
 		this.toolTypeRequired = ToolType.PICKAXE;
 	}

@@ -6,7 +6,7 @@ public class Clay: Block
 	{
 		this.blockName 			= "clay";
 		this.textureName 		= "clay";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 5 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;//change this to SHOVEL (when you implement one)

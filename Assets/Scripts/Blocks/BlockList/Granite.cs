@@ -6,7 +6,7 @@ public class Granite: Block
 	{
 		this.blockName 			= "granite";
 		this.textureName 		= "granite";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

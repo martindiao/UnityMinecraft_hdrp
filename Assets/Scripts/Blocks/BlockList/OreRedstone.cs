@@ -6,7 +6,7 @@ public class OreRedstone: Block
 	{
 		this.blockName 			= "oreRedstone";
 		this.textureName 		= "redstone_ore";
-		this.hardness 			= 1 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

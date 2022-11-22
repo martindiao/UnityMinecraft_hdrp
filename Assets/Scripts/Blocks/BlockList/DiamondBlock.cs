@@ -4,7 +4,7 @@
 	{
 		this.blockName 			= "diamondBlock";
 		this.textureName	 	= "diamond_block";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.toolTypeRequired 	= ToolType.PICKAXE;
 		this.miningLevel 		= MiningLevel.DIAMOND;

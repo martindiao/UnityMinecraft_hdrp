@@ -7,7 +7,7 @@ public class Tuff: Block
     public Tuff(): base()
 	{
 		this.blockName 			= "tuff";
-		this.hardness 			= 3 * 40;
+		this.hardness 			= 6 * 40;
 		this.smeltable 			= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;
 		this.dropsItself = true;

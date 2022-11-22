@@ -6,7 +6,7 @@ public class OreRedstoneDeepslate: Block
 	{
 		this.blockName 			= "deepslateRedstoneOre";
 		this.textureName 		= "deepslate_redstone_ore";
-		this.hardness 			= 1 * 20;
+		this.hardness 			= 7 * 40;
 		this.maxStack 			= 64;
 		this.dropsItself 		= false;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

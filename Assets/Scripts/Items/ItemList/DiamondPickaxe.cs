@@ -11,7 +11,7 @@ public class DiamondPickaxe: Item
 		this.placeable				= false;
 		this.miningLevel			= MiningLevel.DIAMOND;
 		this.toolType				= ToolType.PICKAXE;
-		this.breakingSpeedModifier	= 4.5f;
+		this.breakingSpeedModifier	= 8.0f;
 		this.maxStack				= 1;
 		this.LoadPrefab();
     }

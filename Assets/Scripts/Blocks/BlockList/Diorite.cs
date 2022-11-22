@@ -6,7 +6,7 @@ public class Diorite: Block
 	{
 		this.blockName 			= "diorite";
 		this.textureName 		= "diorite";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.toolTypeRequired 	= ToolType.PICKAXE;

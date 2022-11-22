@@ -4,7 +4,7 @@
 	{
 		this.blockName 			= "rockLimestone";
 		this.textureName 		= "limestone";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 5 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.smeltable 			= false;

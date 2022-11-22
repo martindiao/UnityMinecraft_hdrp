@@ -6,7 +6,7 @@ public class Andesite: Block
 	{
 		this.blockName 			= "andesite";
 		this.textureName 		= "andesite";
-		this.hardness 			= 2 * 20;
+		this.hardness 			= 6 * 20;
 		this.maxStack 			= 64;
 		this.dropsItself 		= true;
 		this.toolTypeRequired 	= ToolType.PICKAXE;
