@@ -84,6 +84,11 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<Snowball>("snowball");
 		Registry.RegisterItem<RawIron>("rawIron");
 		Registry.RegisterItem<RawGold>("rawGold");
+		Registry.RegisterItem<DiamondAxe>("diamondAxe");
+		Registry.RegisterItem<GoldAxe>("goldAxe");
+		Registry.RegisterItem<IronAxe>("ironAxe");
+		Registry.RegisterItem<StoneAxe>("stoneAxe");
+		Registry.RegisterItem<WoodAxe>("woodAxe");
 	}
 
 	void RegisterCraftingRecipes()
@@ -177,6 +182,51 @@ public class Registrar : MonoBehaviour
 				{null, "stick", null}
 			}, 
 			new CraftingResult("diamondPickaxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"planks", "planks", null},
+				{"planks", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("woodAxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"cobblestone", "cobblestone", null},
+				{"cobblestone", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("stoneAxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"ironIngot", "ironIngot", null},
+				{"ironIngot", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("ironAxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"goldIngot", "goldIngot", null},
+				{"goldIngot", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("goldAxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"diamond", "diamond", null},
+				{"diamond", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("diamondAxe", 1)
 		));
 
 		CraftingRecipeRegistry.RegisterRecipe(
