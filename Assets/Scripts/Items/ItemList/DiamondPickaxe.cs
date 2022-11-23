@@ -13,6 +13,7 @@ public class DiamondPickaxe: Item
 		this.toolType				= ToolType.PICKAXE;
 		this.breakingSpeedModifier	= 8.0f;
 		this.maxStack				= 1;
+		this.hasGenericMesh			= true;
 		this.LoadPrefab();
     }
 }

@@ -13,6 +13,7 @@ public class IronPickaxe: Item
 		this.toolType				= ToolType.PICKAXE;
 		this.breakingSpeedModifier	= 6.0f;
 		this.maxStack				= 1;
+		this.hasGenericMesh			= true;
 		this.LoadPrefab();
     }
 }

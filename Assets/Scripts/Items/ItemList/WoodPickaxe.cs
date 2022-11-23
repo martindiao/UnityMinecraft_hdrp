@@ -13,6 +13,7 @@ public class WoodPickaxe: Item
 		this.toolType				= ToolType.PICKAXE;
 		this.breakingSpeedModifier	= 3.5f;
 		this.maxStack				= 1;
+		this.hasGenericMesh			= true;
 		this.LoadPrefab();
     }
 }

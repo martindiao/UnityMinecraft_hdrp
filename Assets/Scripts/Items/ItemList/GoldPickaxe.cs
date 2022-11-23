@@ -13,6 +13,7 @@ public class GoldPickaxe: Item
 		this.toolType				= ToolType.PICKAXE;
 		this.breakingSpeedModifier	= 7.0f;
 		this.maxStack				= 1;
+		this.hasGenericMesh			= true;
 		this.LoadPrefab();
     }
 }

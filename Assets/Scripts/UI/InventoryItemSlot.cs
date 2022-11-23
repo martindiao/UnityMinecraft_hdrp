@@ -29,6 +29,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 	private InventoryContainer inventoryContainer;
 
 	public GameObject itemTag;
+	public bool itemPickedUp;
 
 	private void Start() {
 		itemTag = GameObject.FindGameObjectWithTag("itemTag");
@@ -75,6 +76,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 
 			if (this.itemName == null)
 				return;
+			itemPickedUp = true;
 
 			InventoryContainers.draggingItem = inventoryContainer.items[this.slotIndex];
 			InventoryContainers.draggingItemObject.SetActive(true);
@@ -85,6 +87,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 		else
 		{
 			// * Item dropped down.
+			itemPickedUp = false;
 
 			if (inventoryContainer.items[this.slotIndex] != null)
 			{
@@ -96,7 +99,10 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 				bool tooManyIfCombined 	= currentSlotQuantity + draggableQuantity > inventoryContainer.items[this.slotIndex].maxStack;
 
 				if (!sameName || tooManyIfCombined)
+				{
 					this.SwapDraggable();
+					itemPickedUp = false;
+				}
 
 				if (sameName && !tooManyIfCombined)
 				{
@@ -104,7 +110,9 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 					InventoryContainers.draggingItem = null;
 
 					this.inventoryContainer.items[this.slotIndex].quantity += draggableQuantity;
+					itemPickedUp = false;
 				}
+				itemPickedUp = false;
 			}
 			else
 			{
@@ -114,6 +122,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 			
 				InventoryContainers.draggingItemObject.SetActive(false);
 				InventoryContainers.draggingItem = null;
+				itemPickedUp = false;
 			}
 		}
 
@@ -126,7 +135,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 	}
 	public void OnPointerEnter(PointerEventData eventData)
     {
-		if (itemName != null)
+		if (itemName != null && !itemPickedUp)
 		{
 			itemTag.transform.Find("image").GetComponentInChildren<Text>().text = itemName;
 	        itemTag.transform.Find("image").GetComponent<Image>().enabled = true;
@@ -136,7 +145,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
     }
 	public void OnPointerExit(PointerEventData eventData)
     {
-		if (itemName != null)
+		if (itemName != null && !itemPickedUp)
 		{
         	itemTag.transform.Find("image").GetComponent<Image>().enabled = false;
 			itemTag.transform.Find("image").GetComponentInChildren<Text>().enabled = false;
@@ -157,7 +166,10 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 		if (draggingItem == null)
 		{
 			if (inventoryItem.quantity == 1)
+			{
 				this.SwapDraggable();
+				itemPickedUp = false;
+			}
 			else
 			{
 				int quantity = inventoryItem.quantity;
@@ -165,6 +177,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 				inventoryItem.quantity = quantity / 2 + quantity % 2;
 				InventoryContainers.draggingItem = inventoryItem.Clone();
 				InventoryContainers.draggingItem.quantity -= quantity % 2;
+				itemPickedUp = true;
 			}
 		}
 		else
@@ -174,6 +187,7 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 				this.inventoryContainer.items[this.slotIndex] = draggingItem.Clone();
 				this.inventoryContainer.items[this.slotIndex].quantity = 1;
 				draggingItem.quantity--;
+				itemPickedUp = true;
 			}
 			else 
 			{
@@ -187,15 +201,22 @@ public class InventoryItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnt
 				{
 					inventoryItem.quantity++;
 					draggingItem.quantity--;
+					itemPickedUp = false;
 				}
 			}
 		}
 
 		if (draggingItem?.quantity == 0)
+		{
 			InventoryContainers.draggingItem = null;
+			itemPickedUp = false;
+		}
 
 		if (inventoryItem?.quantity == 0)
+		{
 			this.inventoryContainer.items[this.slotIndex] = null;
+			itemPickedUp = false;
+		}
 
 		InventoryContainers.draggingItemObject.GetComponent<DraggingItem>().UpdateTexture();
 		this.inventoryContainer.UpdateGUI();

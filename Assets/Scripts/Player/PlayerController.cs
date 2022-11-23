@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
 	private Camera _camera;
+	public GameObject itemTag;
 
 	/// <summary>
 	/// Hard reference to the block that is currently being broken.
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         this._camera = this.GetComponentInChildren<Camera>();
+		itemTag = GameObject.FindGameObjectWithTag("itemTag");
     }
 
     // Update is called once per frame
@@ -75,7 +77,10 @@ public class PlayerController : MonoBehaviour
 	private void HandleInventoryKey()
 	{
 		if (MineCraftGUI.isAGUIShown)
+		{
 			this.CloseInventory();
+			//itemTag.SetActive(false);
+		}
 		else
 			this.OpenInventory();
 	}
