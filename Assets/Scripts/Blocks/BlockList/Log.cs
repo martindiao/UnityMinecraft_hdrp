@@ -11,5 +11,6 @@
 		this.smeltable 			= true;
 		this.smeltedResult 		= new CraftingResult("charcoal", 1);
 		this.soundType			= BlockSoundType.WOOD;
+		this.toolTypeRequired	= ToolType.AXE;
 	}
 }

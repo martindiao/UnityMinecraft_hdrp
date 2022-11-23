@@ -8,5 +8,6 @@
 		this.burnable 			= true;
 		this.burnTime 			= 300;
 		this.soundType			= BlockSoundType.WOOD;
+		this.toolTypeRequired	= ToolType.AXE;
 	}
 }

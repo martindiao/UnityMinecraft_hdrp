@@ -170,6 +170,10 @@ public abstract class Block: BaseBlock, IInteractable
 			{
 				Dropper.DropItem(this.blockName, this.coordinates);
 			}
+			else if (this.toolTypeRequired == ToolType.AXE)
+			{
+				Dropper.DropItem(this.blockName, this.coordinates);
+			}
 			else if (this.toolTypeRequired == ToolType.ANY)
 			{
 				Dropper.DropItem(this.blockName, this.coordinates);

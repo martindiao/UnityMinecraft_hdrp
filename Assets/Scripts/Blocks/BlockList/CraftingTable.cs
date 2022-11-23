@@ -10,6 +10,7 @@ public class CraftingTable: Block
 		this.interactable 		= true;
 		this.hardness 			= 3 * 20;
 		this.soundType 			= BlockSoundType.WOOD;
+		this.toolTypeRequired	= ToolType.AXE;
 	}
 
 	public override void Interact()
