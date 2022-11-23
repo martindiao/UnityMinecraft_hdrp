@@ -9619,6 +9619,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2554884862123915211, guid: a05b9e935c27deb4089bb435a98fb158,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2554884862123915212, guid: a05b9e935c27deb4089bb435a98fb158,
         type: 3}
       propertyPath: m_HDR
