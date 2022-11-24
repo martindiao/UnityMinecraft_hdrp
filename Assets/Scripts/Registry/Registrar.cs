@@ -72,7 +72,6 @@ public class Registrar : MonoBehaviour
 		Registry.RegisterItem<DiamondPickaxe>("diamondPickaxe");
 		Registry.RegisterItem<Stick>("stick");
 		Registry.RegisterItem<Apple>("apple");
-		Registry.RegisterItem<Petroleum>("petroleum");
 		Registry.RegisterItem<Redstone>("redstone");
 		Registry.RegisterItem<Saltpeter>("saltpeter");
 		Registry.RegisterItem<Charcoal>("charcoal");
