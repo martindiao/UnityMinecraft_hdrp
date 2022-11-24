@@ -6,5 +6,6 @@
 		this.hardness = 1 * 20;
 		this.maxStack = 64;
 		this.soundType = BlockSoundType.DIRT;
+		this.toolTypeRequired	= ToolType.SHOVEL;
 	}
 }

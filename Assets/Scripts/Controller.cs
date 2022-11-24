@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
 
 		GameObject.Find("Player").transform.Translate(new Vector3(512, 70, 512));
 
-		//InventoryContainers.inventory.items[26] = new InventoryItem("woodPickaxe");
+		//InventoryContainers.inventory.items[26] = new InventoryItem("woodShovel");
 		//InventoryContainers.inventory.items[25] = new InventoryItem("woodPickaxe");
 		//InventoryContainers.inventory.items[24] = new InventoryItem("stonePickaxe");
 		//InventoryContainers.inventory.items[23] = new InventoryItem("stonePickaxe");

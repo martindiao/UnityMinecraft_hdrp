@@ -174,6 +174,10 @@ public abstract class Block: BaseBlock, IInteractable
 			{
 				Dropper.DropItem(this.blockName, this.coordinates);
 			}
+			else if (this.toolTypeRequired == ToolType.SHOVEL)
+			{
+				Dropper.DropItem(this.blockName, this.coordinates);
+			}
 			else if (this.toolTypeRequired == ToolType.ANY)
 			{
 				Dropper.DropItem(this.blockName, this.coordinates);
@@ -183,6 +187,10 @@ public abstract class Block: BaseBlock, IInteractable
 		foreach(Drop drop in this.drops)
 		{
 			if (Random.Range(0, 101) > (1.0f - drop.probability) * 100 && itemInstance != null && itemInstance.toolType == ToolType.PICKAXE && this.toolTypeRequired == ToolType.PICKAXE)
+				Dropper.DropItem(drop.itemName, this.coordinates, drop.quantity);
+			else if (Random.Range(0, 101) > (1.0f - drop.probability) * 100 && itemInstance != null && itemInstance.toolType == ToolType.AXE && this.toolTypeRequired == ToolType.AXE)
+				Dropper.DropItem(drop.itemName, this.coordinates, drop.quantity);
+			else if (Random.Range(0, 101) > (1.0f - drop.probability) * 100 && itemInstance != null && itemInstance.toolType == ToolType.SHOVEL && this.toolTypeRequired == ToolType.SHOVEL)
 				Dropper.DropItem(drop.itemName, this.coordinates, drop.quantity);
 			else if (Random.Range(0, 101) > (1.0f - drop.probability) * 100 && this.toolTypeRequired == ToolType.ANY)
 				Dropper.DropItem(drop.itemName, this.coordinates, drop.quantity);

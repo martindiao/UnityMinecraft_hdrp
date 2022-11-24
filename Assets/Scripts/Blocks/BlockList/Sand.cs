@@ -9,7 +9,7 @@
 		this.dropsItself 		= true;
 		this.smeltable 			= true;
 		this.smeltedResult 		= new CraftingResult("glass", 1);
-		this.toolTypeRequired 	= ToolType.ANY;
+		this.toolTypeRequired 	= ToolType.SHOVEL;
 		this.soundType 			= BlockSoundType.DIRT;
 	}
 }
