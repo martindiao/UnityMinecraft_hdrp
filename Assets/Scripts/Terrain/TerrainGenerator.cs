@@ -42,8 +42,8 @@ public class TerrainGenerator : MonoBehaviour
 	void Start()
 	{
 		this.noise = new FastNoise();
-		//this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
-		this.noise.SetSeed(UnityEngine.Random.Range(0, 999999));//USE THIS TO RANDOMIZE THE SEED
+		this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
+		//this.noise.SetSeed(UnityEngine.Random.Range(0, 999999));//USE THIS TO RANDOMIZE THE SEED
 		print(this.noise.GetSeed());
 
 		this.GenerateStartingTerrain();
@@ -459,11 +459,13 @@ public class TerrainGenerator : MonoBehaviour
 			
 			int groundLevel = -1;
 			for (int y = 0; y < Chunk.chunkHeight; y++)
+			{
 				if (blocks[tPosX,y,tPosZ].blockName == "grass")
 				{
 					groundLevel = y + 1;
 					break;
 				}
+			}
 
 			if (groundLevel == -1)
 				continue;
@@ -481,6 +483,7 @@ public class TerrainGenerator : MonoBehaviour
 			// Make the trunk!
 			for (int i = 0; i < 5; i++)
 			{
+				blocks[tPosX, groundLevel - 1, tPosZ] = Registry.Instantiate("log") as BaseBlock;
 				blocks[tPosX, groundLevel + i, tPosZ] = Registry.Instantiate("log") as BaseBlock;
 			}
 			// First 5x5 layer of leaves
