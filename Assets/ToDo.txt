@@ -1,0 +1,6 @@
+To Do for Minecraft!
+
+Make loading chunks faster (probably using the greedy meshing algorithm)
+Add biomes
+Better sky (with clouds?)
+Day/Night cycle
