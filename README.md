@@ -1,6 +1,4 @@
-### MineCrafter.
-
-yeh, I might change the name.
+### Minecraft.
 
 ## Features
     Inventory system
@@ -8,9 +6,12 @@ yeh, I might change the name.
     Smelting
     Infinite terrain generation
     Ore generation
-    Water
     Massive caves
     Trees
+    Tools
+        Pickaxe
+        Axe
+        Shovel
 
 
 ## Not yet implemented features
@@ -35,14 +36,12 @@ yeh, I might change the name.
         Cats
         Dolphins
     Better caves
-        Caves that aren't 30 blocks high and wide, that stretch all the way to bedrock
+        Caves that aren't 30 blocks high and wide, that stretch all the way to bedrock... Probably using perlin worms
     Block physics
         TNT explosions
         Falling blocks
     More tools/weapons
         Hoes
-        Axes
-        Shovels
         Swords
         Bow and Arrows
         Shield

@@ -42,8 +42,8 @@ public class TerrainGenerator : MonoBehaviour
 	void Start()
 	{
 		this.noise = new FastNoise();
-		this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
-		//this.noise.SetSeed(UnityEngine.Random.Range(0, 999999));//USE THIS TO RANDOMIZE THE SEED
+		//this.noise.SetSeed(1337);//USE THIS TO SET THE SEED
+		this.noise.SetSeed(UnityEngine.Random.Range(0, 999999));//USE THIS TO RANDOMIZE THE SEED
 		print(this.noise.GetSeed());
 
 		this.GenerateStartingTerrain();
