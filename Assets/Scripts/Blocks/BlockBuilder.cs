@@ -28,6 +28,7 @@ public static class BlockBuilder
 
 		entity.AddComponent<MeshFilter>();
 		entity.AddComponent<MeshRenderer>();
+		entity.GetComponent<MeshRenderer>().material = CachedResources.Load<Material>("Materials/blockItem");
 		entity.GetComponent<MeshRenderer>().material.mainTexture = texture;
 
 		Mesh mesh = new Mesh();

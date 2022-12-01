@@ -92,6 +92,8 @@ public class TerrainGenerator : MonoBehaviour
 		StartCoroutine(this.GenerateChunkPoolAsync(chunksToAdd.ToArray()));
 
 		this.previousPlayerPosition = currentPlayerPosition;
+		//BaseBlock[,,] blocks = new BaseBlock[Chunk.chunkSize, Chunk.chunkHeight, Chunk.chunkSize];
+		//GrassCheck(blocks);
 	}
 
 	/// <summary>
@@ -180,6 +182,22 @@ public class TerrainGenerator : MonoBehaviour
 
 		PCTerrain.GetInstance().chunks[(chunk.x, chunk.z)] = chunk;
 	}
+	/*public void GrassCheck(BaseBlock[,,] blocks)
+	{
+		for (int i = 0; i < Chunk.chunkSize; i++)
+		{
+			for (int j = 0; j < Chunk.chunkHeight; j++)
+			{
+				for (int k = 0; k < Chunk.chunkSize; k++)
+				{
+					if (blocks[i,j,k].blockName == "grass")
+					{
+						print(blocks[i,j,k].blockName);
+					}
+				}
+			}
+		}
+	}*/
 
 	/// <summary>
 	/// Generates a chunk's blocks. The chunk is identified by an (x,y) position. Generated blocks are inserted into the `blocks` out parameter.

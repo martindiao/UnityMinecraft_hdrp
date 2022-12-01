@@ -75,7 +75,7 @@
         Desert wells
         Geodes
         Fossils
-    More Blocks, and their behaviors
+    More Blocks, and their behaviours
         Chests
         TNTs
         Beds
