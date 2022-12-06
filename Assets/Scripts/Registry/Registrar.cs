@@ -163,6 +163,15 @@ public class Registrar : MonoBehaviour
 
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
+				{"cobbledeepslate", "cobbledeepslate", "cobbledeepslate"},
+				{null, "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("stonePickaxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
 				{"ironIngot", "ironIngot", "ironIngot"},
 				{null, "stick", null},
 				{null, "stick", null}
@@ -208,6 +217,15 @@ public class Registrar : MonoBehaviour
 
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
+				{"cobbledeepslate", "cobbledeepslate", null},
+				{"cobbledeepslate", "stick", null},
+				{null, "stick", null}
+			}, 
+			new CraftingResult("stoneAxe", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
 				{"ironIngot", "ironIngot", null},
 				{"ironIngot", "stick", null},
 				{null, "stick", null}
@@ -245,6 +263,15 @@ public class Registrar : MonoBehaviour
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
 				{"cobblestone", null, null},
+				{"stick", null, null},
+				{"stick", null, null}
+			}, 
+			new CraftingResult("stoneShovel", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"cobbledeepslate", null, null},
 				{"stick", null, null},
 				{"stick", null, null}
 			}, 
@@ -373,6 +400,15 @@ public class Registrar : MonoBehaviour
 				{"cobblestone", "cobblestone", "cobblestone"},
 				{"cobblestone", null, "cobblestone"},
 				{"cobblestone", "cobblestone", "cobblestone"}
+			}, 
+			new CraftingResult("furnace", 1)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
+				{"cobbledeepslate", "cobbledeepslate", "cobbledeepslate"},
+				{"cobbledeepslate", null, "cobbledeepslate"},
+				{"cobbledeepslate", "cobbledeepslate", "cobbledeepslate"}
 			}, 
 			new CraftingResult("furnace", 1)
 		));
