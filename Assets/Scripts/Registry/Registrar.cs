@@ -118,6 +118,15 @@ public class Registrar : MonoBehaviour
 
 		CraftingRecipeRegistry.RegisterRecipe(
 			new CraftingRecipe(new string[3,3] {
+				{"charcoal", null, null},
+				{"stick", null, null},
+				{null, null, null}
+			}, 
+			new CraftingResult("torch", 4)
+		));
+
+		CraftingRecipeRegistry.RegisterRecipe(
+			new CraftingRecipe(new string[3,3] {
 				{"brick", "brick", "brick"},
 				{"brick", "brick", "brick"},
 				{"brick", "brick", "brick"}
