@@ -1,0 +1,24 @@
+﻿public class itemTemplate: Item
+{
+    public constructor(): base()
+	{
+		this.itemName 			= "ITEM_NAME";
+		this.itemTextureName 	= "TEXTURE_NAME";
+		this.breakingSpeedModifier = BREAKINGSPEEDMODIFIER;
+		this.hasGenericMesh 	= HASGENERICMESH;
+		this.burnable 			= BURNABLE;
+		this.burnTime			= BURN_TIME;
+		this.breakable			= BREAKABLE;
+		this.placeable			= PLACEABLE;
+		this.miningLevel 		= MiningLevel.MININGLEVEL;
+		this.toolTypeRequired 	= ToolType.TOOLTYPE;
+		this.smeltable 			= SMELTABLE;
+		this.smeltedResult		= new CraftingResult("SMELTED_RESULT", RESULTAMT);
+		this.dropsItself		= DROPS_ITSELF;
+		this.maxStack			= MAX_STACK;
+		this.anyToolRequired	= ANYTOOL;
+
+		this.drops = new List<Drop>();
+		this.drops.Add(new Drop("DROP", DROPAMT, 1.0f));
+	}
+}
