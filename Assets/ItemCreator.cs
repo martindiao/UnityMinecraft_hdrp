@@ -25,7 +25,7 @@ public class ItemCreator : EditorWindow
     public ToolType toolType;
     public Texture texture;
 
-    [MenuItem("Minecraft/Block Creator")]
+    [MenuItem("Minecraft/Item Creator")]
     public static void ShowWindow()
     {
         GetWindow<ItemCreator>("Item Creator");
