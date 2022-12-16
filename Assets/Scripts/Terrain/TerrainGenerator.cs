@@ -501,7 +501,7 @@ public class TerrainGenerator : MonoBehaviour
 			// Make the trunk!
 			for (int i = 0; i < 5; i++)
 			{
-				blocks[tPosX, groundLevel - 1, tPosZ] = Registry.Instantiate("log") as BaseBlock;
+				blocks[tPosX, groundLevel - 1, tPosZ] = Registry.Instantiate("dirt") as BaseBlock;
 				blocks[tPosX, groundLevel + i, tPosZ] = Registry.Instantiate("log") as BaseBlock;
 			}
 			// First 5x5 layer of leaves
