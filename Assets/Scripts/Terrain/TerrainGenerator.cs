@@ -28,6 +28,7 @@ public class TerrainGenerator : MonoBehaviour
 	private int chunkMatrixSize = 5;
 
 	public int chunkRenderDistance = 5;
+	BaseBlock[,,] blocks;
 
 	/// <summary>
 	/// Used to notify the main thread when a chunk has been generated to rebuild chunk meshes.

@@ -37,10 +37,6 @@ public class Controller : MonoBehaviour
     {
 		if (weatherType == Weather.Foggy)
 		{
-			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeEnabled = true;
-			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeStart = 0;
-			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeLength = 15;
-			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeToIntensity = 0.156f;
 
 			RenderSettings.fog = true;
 
@@ -49,7 +45,6 @@ public class Controller : MonoBehaviour
 			player.GetComponentInChildren<Camera>().backgroundColor = playercamBackgroundColor1;
 		} else
 		{
-			player.GetComponentInChildren<AmplifyOcclusionEffect>().FadeEnabled = false;
 
 			RenderSettings.fog = false;
 
