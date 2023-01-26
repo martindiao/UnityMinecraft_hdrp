@@ -1,0 +1,18 @@
+[0124/202740.602:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\chrome_100_percent.pak
+Some features may not be available.
+[0124/202740.603:WARNING:resource_bundle.cc(448)] locale_file_path.empty() for locale 
+[0124/202740.603:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\resources.pak
+Some features may not be available.
+[0124/202740.603:ERROR:registration_protocol_win.cc(107)] CreateFile: The system cannot find the file specified. (0x2)
+[0124/202744.048:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\chrome_100_percent.pak
+Some features may not be available.
+[0124/202744.049:WARNING:resource_bundle.cc(448)] locale_file_path.empty() for locale 
+[0124/202744.050:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\resources.pak
+Some features may not be available.
+[0124/202744.051:ERROR:registration_protocol_win.cc(107)] CreateFile: The system cannot find the file specified. (0x2)
+[0124/202750.161:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\chrome_100_percent.pak
+Some features may not be available.
+[0124/202750.162:WARNING:resource_bundle.cc(448)] locale_file_path.empty() for locale 
+[0124/202750.162:ERROR:resource_bundle.cc(987)] Failed to load C:\Program Files\Unity Hub\resources.pak
+Some features may not be available.
+[0124/202750.162:ERROR:registration_protocol_win.cc(107)] CreateFile: The system cannot find the file specified. (0x2)

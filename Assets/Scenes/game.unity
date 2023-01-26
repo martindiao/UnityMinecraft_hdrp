@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.5294118, g: 0.69411767, b: 0.9607843, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 261.9007, g: 324.45554, b: 429.43463, a: 1}
+  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12027,6 +12027,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Version
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391802659980443901, guid: a05b9e935c27deb4089bb435a98fb158,
+        type: 3}
+      propertyPath: backgroundColorHDR.b
+      value: 0.5943396
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391802659980443901, guid: a05b9e935c27deb4089bb435a98fb158,
+        type: 3}
+      propertyPath: backgroundColorHDR.g
+      value: 0.21795678
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391802659980443901, guid: a05b9e935c27deb4089bb435a98fb158,
+        type: 3}
+      propertyPath: backgroundColorHDR.r
+      value: 0.06448025
       objectReference: {fileID: 0}
     - target: {fileID: 6391802659980443901, guid: a05b9e935c27deb4089bb435a98fb158,
         type: 3}
