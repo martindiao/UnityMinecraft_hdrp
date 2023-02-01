@@ -289,11 +289,12 @@ public class TerrainGenerator : MonoBehaviour
 			k * 20f
 		) * 3;//makes the stone humps more defined
 
-		float caveFractal = this.noise.GetPerlinFractal(
+		float caveFractal = this.noise.GetSimplex(
 			i * 5f,//the smaller the number, the longer the cave gets on the x axis
 			j * 3f,//the smaller the number, the longer the cave gets on the y axis
 			k * 5f//the smaller the number, the longer the cave gets on the z axis
 		) * 1.1f;//how common caves are
+		//change the * 1.1f to * .5f and the GetSimplex to GetSimplexFractal to get some satisfying cave gen, but the chunk gen gets messed up.
 
 		float caveFractalMask = this.noise.GetSimplex(
 			i * .45f,
