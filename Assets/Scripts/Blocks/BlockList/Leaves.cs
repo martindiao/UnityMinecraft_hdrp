@@ -11,7 +11,7 @@ public class Leaves: Block
 		this.soundType			= BlockSoundType.DIRT;
 		
 		this.drops = new List<Drop>();
-		this.drops.Add(new Drop("apple", 1, .5f));
-		this.drops.Add(new Drop("stick", 1, .2f));
+		this.drops.Add(new Drop("apple", 1, .1f));
+		this.drops.Add(new Drop("stick", 1, .1f));
 	}
 }
