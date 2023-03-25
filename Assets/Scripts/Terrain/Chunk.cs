@@ -143,7 +143,7 @@ public class Chunk
 					// Determine block adjacency with air. For each adjacent block face, render the face.
 
 					// If the block itself is air, don't render anything
-					if (this.blocks[i,j,k] == null || this.blocks[i,j,k].blockName == "air")
+					if (this.blocks != null && this.blocks[i,j,k] == null || this.blocks[i,j,k].blockName == "air")
 						continue;
 
 					// Top face adjacency
