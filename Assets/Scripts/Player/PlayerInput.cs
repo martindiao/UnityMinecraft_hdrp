@@ -80,8 +80,8 @@ public class PlayerInput : MonoBehaviour
 		if (!expandFOVnow)
 			gameObject.GetComponentInChildren<Camera>().fieldOfView --;
 
-		if (gameObject.GetComponentInChildren<Camera>().fieldOfView >= 90)
-			gameObject.GetComponentInChildren<Camera>().fieldOfView = 90;
+		if (gameObject.GetComponentInChildren<Camera>().fieldOfView >= 70)
+			gameObject.GetComponentInChildren<Camera>().fieldOfView = 70;
 
 		if (gameObject.GetComponentInChildren<Camera>().fieldOfView <= 60 && this.speed == walkingSpeed)
 			gameObject.GetComponentInChildren<Camera>().fieldOfView = 60;

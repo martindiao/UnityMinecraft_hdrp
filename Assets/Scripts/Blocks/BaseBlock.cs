@@ -19,4 +19,6 @@
 	/// Whether the block has to have a hard reference in PCTerrain blocks.
 	/// </summary>
 	public bool stateful = false;
+	
+	public bool rotatable = false;
 }
