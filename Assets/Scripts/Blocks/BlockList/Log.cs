@@ -11,7 +11,6 @@ public class Log: Block
 		this.hardness 			= 3 * 20;
 		this.hasSidedTextures 	= true;
 		this.burnable 			= true;
-		this.rotatable			= true;
 		this.burnTime 			= 300;
 		this.smeltable 			= true;
 		this.smeltedResult 		= new CraftingResult("charcoal", 1);

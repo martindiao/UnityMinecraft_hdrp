@@ -19,6 +19,7 @@
 	/// Whether the block has to have a hard reference in PCTerrain blocks.
 	/// </summary>
 	public bool stateful = false;
-	
-	public bool rotatable = false;
+
+	public enum Rotation{Up, Down, North, East, South, West};
+	public Rotation blockRotation = Rotation.Up;
 }
