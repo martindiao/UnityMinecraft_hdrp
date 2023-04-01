@@ -165,6 +165,11 @@ public class Chunk
 							if (j == chunkHeight - 1 || this.blocks[i, j, k + 1]?.blockName == "air" || this.blocks[i, j, k + 1]?.blockName == "leaves" || this.blocks[i, j, k + 1]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "top", CubeMeshFaces.east, vertices, uvs, triangles);
 						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (j == chunkHeight - 1 || this.blocks[i, j, k - 1]?.blockName == "air" || this.blocks[i, j, k - 1]?.blockName == "leaves" || this.blocks[i, j, k - 1]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "top", CubeMeshFaces.front, vertices, uvs, triangles);
+						}
 					}
 
 					// Bottom face adjacency
@@ -184,6 +189,11 @@ public class Chunk
 						{
 							if (j == 0 || this.blocks[i, j, k - 1]?.blockName == "air" || this.blocks[i, j, k - 1]?.blockName == "leaves" || this.blocks[i, j, k - 1]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "bottom", CubeMeshFaces.west, vertices, uvs, triangles);
+						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (j == 0 || this.blocks[i, j, k + 1]?.blockName == "air" || this.blocks[i, j, k + 1]?.blockName == "leaves" || this.blocks[i, j, k + 1]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "bottom", CubeMeshFaces.back, vertices, uvs, triangles);
 						}
 					}
 
@@ -205,6 +215,11 @@ public class Chunk
 							if (i == 0 || this.blocks[i, j + 1, k]?.blockName == "air" || this.blocks[i, j + 1, k]?.blockName == "leaves" || this.blocks[i, j + 1, k]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "west", CubeMeshFaces.top, vertices, uvs, triangles);
 						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (i == 0 || this.blocks[i - 1, j, k]?.blockName == "air" || this.blocks[i - 1, j, k]?.blockName == "leaves" || this.blocks[i - 1, j, k]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "west", CubeMeshFaces.west, vertices, uvs, triangles);
+						}
 					}
 
 					// East face adjacency
@@ -224,6 +239,11 @@ public class Chunk
 						{
 							if (i == chunkSize - 1 || this.blocks[i, j - 1, k]?.blockName == "air" || this.blocks[i, j - 1, k]?.blockName == "leaves" || this.blocks[i, j - 1, k]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "east", CubeMeshFaces.bottom, vertices, uvs, triangles);
+						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (i == chunkSize - 1 || this.blocks[i + 1, j, k]?.blockName == "air" || this.blocks[i + 1, j, k]?.blockName == "leaves" || this.blocks[i + 1, j, k]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "east", CubeMeshFaces.east, vertices, uvs, triangles);
 						}
 					}
 
@@ -245,6 +265,11 @@ public class Chunk
 							if (k == 0 || this.blocks[i, j, k + 1]?.blockName == "air" || this.blocks[i, j, k + 1]?.blockName == "leaves" || this.blocks[i, j, k + 1]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "front", CubeMeshFaces.front, vertices, uvs, triangles);
 						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (k == 0 || this.blocks[i, j - 1, k]?.blockName == "air" || this.blocks[i, j - 1, k]?.blockName == "leaves" || this.blocks[i, j - 1, k]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "front", CubeMeshFaces.bottom, vertices, uvs, triangles);
+						}
 					}
 
 					// Back face adjacency
@@ -264,6 +289,11 @@ public class Chunk
 						{
 							if (k == chunkSize - 1 || this.blocks[i, j, k - 1]?.blockName == "air" || this.blocks[i, j, k - 1]?.blockName == "leaves" || this.blocks[i, j, k - 1]?.blockName == "glass")
 								this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.back, vertices, uvs, triangles);
+						}
+						else if (this.blocks[i, j, k].blockRotation == BaseBlock.Rotation.South)
+						{
+							if (k == chunkSize - 1 || this.blocks[i, j + 1, k]?.blockName == "air" || this.blocks[i, j + 1, k]?.blockName == "leaves" || this.blocks[i, j + 1, k]?.blockName == "glass")
+								this.AddFace(i, j, k, builtFaces++, "back", CubeMeshFaces.top, vertices, uvs, triangles);
 						}
 					}
 				}
