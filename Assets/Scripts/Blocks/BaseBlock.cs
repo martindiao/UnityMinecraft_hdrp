@@ -20,6 +20,6 @@
 	/// </summary>
 	public bool stateful = false;
 
-	public enum Rotation{Up, Down, North, East, South, West};
+	public enum Rotation{Up, North, East, South, West};
 	public Rotation blockRotation = Rotation.Up;
 }
