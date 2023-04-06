@@ -101,6 +101,7 @@ public class PCTerrain
 		this.chunks[chunkPosition].blocks[x % 16, y, z % 16] = blockRef;
 		this.blocks[new Vector3(x % 16, y, z % 16)] = blockRef;
 
+		this.chunks[chunkPosition].block = blockRef;
 		this.chunks[chunkPosition].BuildMesh();
 
 		return new Vector3(x % 16, y, z % 16);

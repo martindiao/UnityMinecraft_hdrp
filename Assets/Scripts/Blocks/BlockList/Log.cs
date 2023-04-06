@@ -27,7 +27,7 @@ public class Log: Block
 		ChunkPosition position 		= Player.instance.GetVoxelChunk();
 		Chunk chunk 				= PCTerrain.GetInstance().chunks[position];
 
-		Debug.Log("A log has been placed");
+		//Do stuff
 
 		return placementCoords;
 	}

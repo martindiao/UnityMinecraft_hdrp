@@ -237,10 +237,7 @@ public abstract class Block: BaseBlock, IInteractable
 		Vector3Int placingBlockCoordinates = Utils.ToVectorInt(hit.point + hit.normal / 2.0f);
 		Vector3Int playerPosition = Player.instance.GetVoxelPosition();
 
-		if (
-			placingBlockCoordinates == playerPosition || 
-			placingBlockCoordinates == new Vector3Int(playerPosition.x, playerPosition.y + 1, playerPosition.z)
-		)
+		if (placingBlockCoordinates == playerPosition || placingBlockCoordinates == new Vector3Int(playerPosition.x, playerPosition.y + 1, playerPosition.z))
 			return null;
 
 		this.PlaySound(hit.transform, placingBlockCoordinates);

@@ -35,6 +35,7 @@ public class Chunk
 	/// Whether the mesh was already built or not.
 	/// </summary>
 	public bool meshBuilt = false;
+	public Block block;
 
 	/// <summary>
 	/// x-position of the chunk.
@@ -140,6 +141,13 @@ public class Chunk
 			for (int j = 0; j < chunkHeight; j++)
 				for (int k = 0; k < chunkSize; k++)
 				{
+					if (block != null)
+					{
+						if (this.blocks[block.coordinates.x, block.coordinates.y, block.coordinates.z].blockName != "air")
+						{
+							block.blockRotation = BaseBlock.Rotation.Up;
+						}
+					}
 					// Determine block adjacency with air. For each adjacent block face, render the face.
 
 					// If the block itself is air, don't render anything
